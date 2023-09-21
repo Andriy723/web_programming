@@ -1,0 +1,62 @@
+@keyframes rotate {
+  0% {
+    transform: rotateY(110deg);
+  }
+  50% {
+    transform: rotateY(190deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes circle_rotate {
+  100% {
+    transform: rotate(3600deg) rotateY(3600deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 20px rgba(34, 111, 255, 0.2);
+  }
+  25% {
+    box-shadow: 0 0 20px rgba(34, 130, 0, 0.9);
+  }
+  50% {
+    box-shadow: 0 0 20px rgb(79, 18, 18);
+  }
+  75% {
+    box-shadow: 0 0 20px rgb(90, 82, 43);
+  }
+  100% {
+    box-shadow: 0 0 20px rgb(61, 27, 91);
+  }
+}
+
+@keyframes thing_rotate {
+  100% {
+    transform: rotate(3720deg);
+  }
+}
+
+@keyframes arrows_rotate {
+  0% {
+    transform: rotate(580deg);
+    transform-origin: 30px 94px;
+    left: 0;
+  }
+  9% {
+    transform-origin: 100px 10px;
+  }
+  46% {
+    transform-origin: 100px 10px;
+  }
+  54% {
+    transform-origin: 100px 10px;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

@@ -14,9 +14,15 @@
         rel="stylesheet">
   <!-- Support libs -->
   <link rel="stylesheet" href="css/normalize.min.css">
-  <link rel="stylesheet" href="css/reset.min.css">
+  <link rel="stylesheet" href="css/header.css">
   <!-- My styles -->
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/main_body_part.css">
+  <link rel="stylesheet" href="css/reminder.css">
+  <link rel="stylesheet" href="css/arrows.css">
+  <link rel="stylesheet" href="css/connection.css">
+  <link rel="stylesheet" href="css/bottom.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
 
 <body>
@@ -28,10 +34,10 @@
         </div>
         <div class="header__login">
           <li class="login">
-            <a class="header__nav-link" href="">Login</a>
+            <a class="header_nav--link" href="">Login</a>
           </li>
         </div>
-        <nav class="header_nav">
+        <nav id="nav-links" class="header_nav">
           <ul>
             <li class="header__nav-item">
               <a class="header__nav-link" href="">Services</a>
@@ -44,25 +50,34 @@
             </li>
           </ul>
         </nav>
+
         <button class="Try_it_for_free">
           Try it for free
         </button>
+
+      <div class="header__menu" onclick="toggleMenu()">
+        <img src="images/menu-icon.png" alt="Menu icon">
+      </div>
       </header>
     </div>
 
-    <div class="hero-container">
-      <div class="hero__inner">
-        <h1 class="hero_title">
-          Take your relationships to the next level
-        </h1>
-        <p class="paragraph">
-          The multichannel sales engagement platform which automates personal email outreach,
-          calls, and tasks, while Sales can focus on what really matters - closing deals.
-        </p>
-        <div class="hero_buttons">
-          <input class="double_button" type="text" placeholder="   Email id"/>
-          <button class="text_button">Try it for free</button>
+    <div class="hero_w_photo">
+      <div class="hero-container">
+        <div class="hero__inner">
+          <h1 class="hero_title">
+            Take your relationships to the next level
+          </h1>
+          <p class="paragraph">
+            The multichannel sales engagement platform which automates personal email outreach,
+            calls, and tasks, while Sales can focus on what really matters - closing deals.
+          </p>
+          <div class="hero_buttons">
+            <input class="double_button" type="email" placeholder="   Email id"/>
+            <button class="text_button">Try it for free</button>
+          </div>
         </div>
+      </div>
+      <div class="hero-image">
       </div>
     </div>
 
@@ -133,7 +148,8 @@
 
     <div class="arrows">
       <div class="arrows_img">
-        <img src="images/arrows.png" alt="img_arrows" class="arrows_img"></div>
+        <img src="images/arrows.png" alt="img_arrows" class="arrows_img">
+      </div>
 
       <div class="databases">
         <h1 class="databases_header">
@@ -149,14 +165,15 @@
         <div class="data_container">
           <div class="data_lists_1">
             <img src="images/check_mark.png" alt="data_img" class="data_img">
-            <div class="Devices">
-              <p>Available on devices</p>
-            </div>
+              <div class="Devices">
+                <p>Available on devices</p>
+              </div>
             <img src="images/check_mark.png" alt="data_img" class="data_img">
-            <div class="Phonebook">
-              <p>Can be accesed via phonebook</p>
-            </div>
+              <div class="Phonebook">
+                <p>Can be accesed via phonebook</p>
+              </div>
           </div>
+
           <div class="data_lists_2">
             <img src="images/check_mark.png" alt="data_img" class="data_img">
             <div class="Details">
@@ -224,6 +241,7 @@
           </p>
         </div>
       </div>
+
       <div class="connection_container">
         <div class="connection_text">
           <p>
@@ -272,5 +290,7 @@
       </div>
     </footer>
   </section>
+
+  <script src="../js/main.js"></script>
 </body>
 </html>

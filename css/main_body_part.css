@@ -1,0 +1,106 @@
+.hero-container {
+  max-width: 776px;
+  margin-top: 100px;
+}
+
+.hero__inner {
+  margin-left: 310px;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: #73738D;
+}
+
+li {
+  display: block;
+}
+
+.hero_title {
+  width: 429px;
+  height: 97px;
+  color: #222;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.paragraph{
+  height: 67px;
+  color: #73738D;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 150%;
+  padding-right: 50px;
+}
+
+.hero_buttons {
+  display:flex;
+  flex-direction:row;
+  width: 410px;
+  height: 42px;
+  border-radius: 34px;
+  box-shadow: -4px 2px #fdfafa, 2px 4px #faf2f2, 4px 2px #fbf7f7, 2px -4px #fdf8f8, 2px -4px #f4f0f0;
+}
+
+.double_button {
+  flex-grow:2;
+  background: #FFF;
+  border: none;
+  border-radius: 34px;
+}
+
+.double_button:focus {
+  outline:none;
+}
+
+.hero_buttons:focus-within {
+  outline: 2px solid #FFFFFF;
+  animation: pulse 5s linear infinite;
+}
+
+.text_button {
+  border:2px solid blue;
+  color:white;
+  width: 158px;
+  height: 42px;
+  border-radius: 34px;
+  background: #1943EF;
+  cursor: wait;
+}
+
+.text_button:hover, .text_button:active {
+  background: #ffffff;
+  color: #0445e6;
+}
+
+@media screen and (max-width:768px) {
+  .hero-container {
+    margin-top: 10px;
+    margin-left: -44%;
+    width: 60%;
+  }
+
+  .hero_title {
+    margin-top: 130px;
+    font-size: 30px;
+    width: 200%;
+  }
+
+  .paragraph {
+    padding-bottom: 40px;
+    width: 215%;
+  }
+
+  .hero_buttons {
+    width: 190%;
+  }
+
+  .text_button {
+    width: 40%;
+  }
+
+  .hero-image {
+    display: none;
+  }
+}

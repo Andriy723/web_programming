@@ -1,0 +1,157 @@
+.header {
+  background: #fff;
+  display: flex;
+  margin-left: 300px;
+  align-items: center;
+}
+
+.header_nav ul {
+  display: flex;
+}
+
+.header__menu {
+  display: none;
+  width: 32px;
+  cursor: pointer;
+}
+
+.header__menu > img {
+  max-width: 100%;
+}
+
+.header__menu-icon {
+  width: 40px;
+}
+
+.header__title {
+  width: 103px;
+  height: 29px;
+  color: #222;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.header__nav-item {
+  margin-right: 44px;
+  width: 35px;
+  height: 13px;
+  color: #73738D;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.header__nav-link, .header_nav--link {
+  padding: 0 40px;
+}
+
+.header__login {
+  width: 28px;
+  height: 13px;
+  color: #73738D;
+  font-size: 11px;
+  font-weight: 600;
+  margin-right: 200px;
+}
+
+.Try_it_for_free {
+  color: #1943EF;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 34px;
+  background: #fff;
+  border: 2px solid #1943EF;
+  width: 119px;
+  height: 32px;
+  cursor: wait;
+  margin-left: 90px;
+}
+
+.Try_it_for_free:hover, .Try_it_for_free:active {
+  background: #1943EF;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 20px;
+    background-color: white;
+    z-index: 10;
+    width: 55%;
+    margin-left: -4%;
+    align-items: center;
+  }
+
+  .header_nav ul {
+    display: block;
+    margin-right: 4px;
+    width: 34px;
+    padding-right: 0;
+  }
+
+  .header__title {
+    font-size: 13px;
+    margin-left: 14px;
+    margin-top: 21px;
+  }
+
+  .header__login {
+    margin-right: 0;
+    margin-top: 8px;
+    font-size: 9px !important;
+  }
+
+  .header_nav--link {
+    padding: 0 5px;
+  }
+
+  .header__menu {
+    display: block;
+    margin-left: 30%;
+    margin-top: 10px;
+    position: relative;
+    animation: circle_rotate 3s ease-out;
+  }
+
+  .Try_it_for_free {
+    display: none;
+  }
+
+  .header_nav {
+    background: #007eff;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 0;
+    clip-path: circle(0 at top left);
+    transition: clip-path 0.9s ease-in;
+  }
+
+  .header_nav.open {
+    clip-path: circle(1000px at top);
+  }
+
+  .header_nav ul {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .header_nav, .header__nav-item {
+    margin-right: 0;
+    padding-top: 10vh;
+    flex: 1;
+  }
+
+  .header__nav-link {
+    font-weight: 500;
+    display: block;
+    font-size: 32px;
+    color: white;
+  }
+}
