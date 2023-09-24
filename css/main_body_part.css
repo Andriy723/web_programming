@@ -1,9 +1,7 @@
 .hero-container {
   max-width: 776px;
-  margin-top: 100px;
-}
-
-.hero__inner {
+  margin-top: 140px;
+  padding-bottom: 117px;
   margin-left: 310px;
   display: block;
 }
@@ -31,7 +29,7 @@ li {
   font-size: 14px;
   font-weight: 500;
   line-height: 150%;
-  padding-right: 50px;
+  padding-right: 370px;
 }
 
 .hero_buttons {
@@ -77,23 +75,26 @@ li {
 @media screen and (max-width:768px) {
   .hero-container {
     margin-top: 10px;
-    margin-left: -44%;
-    width: 60%;
+    margin-left: 0;
+    width: 92%;
+    left: 0;
+    padding-bottom: 340px;
   }
 
   .hero_title {
     margin-top: 130px;
     font-size: 30px;
-    width: 200%;
+    width: 133%;
   }
 
   .paragraph {
     padding-bottom: 40px;
-    width: 215%;
+    width: 130%;
+    padding-right: 0;
   }
 
   .hero_buttons {
-    width: 190%;
+    width: 290px;
   }
 
   .text_button {

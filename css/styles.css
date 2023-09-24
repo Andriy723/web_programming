@@ -6,14 +6,6 @@ body {
   height: 1948px;
 }
 
-@media screen and (max-width: 768px) {
-  body {
-    justify-content: flex-start;
-    align-items: flex-start;
-    left: 1%;
-  }
-}
-
 @media screen and (max-width: 450px) {
   :root {
     font-size: 12px;
@@ -23,22 +15,10 @@ body {
 .hero {
   margin-right: 100px;
   position: absolute;
-}
-
-
-.hero-image {
-  width: 330px;
-  height: 500px;
-  display: flex;
   background: url(../images/phone.png) no-repeat scroll right top;
-  background-position-y: 37px;
+  background-position-x: 833px;
+  background-position-y: 97px;
   background-size: 261px 459px;
-  position: relative;
-  animation: rotate 2.4s linear;
-}
-
-.hero_w_photo {
-  display: flex;
 }
 
 @media screen and (max-width: 768px) {
@@ -47,10 +27,12 @@ body {
     background-position-x: 4px;
     background-position-y: 460px;
     background-size: 240px 400px;
-    align-items: center;
     position: absolute;
+    margin: 0;
     padding: 0;
     left: 38px;
+    width: 77%;
+    box-sizing: border-box;
   }
 }
 

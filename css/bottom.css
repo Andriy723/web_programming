@@ -55,7 +55,7 @@
 @media screen and (max-width: 768px) {
   .invitation {
     margin-left: -4%;
-    width: 40%;
+    width: 130%;
     display: block;
     padding: 5px 2px 5px 5px;
   }
@@ -63,12 +63,13 @@
   .invitation_container {
     margin-left: 10px;
     margin-top: 15px;
-    width: 34%;
+    width: 90%;
   }
 
   .invitation_text {
     font-size: 15px;
     height: 10px;
+    width: 100%;
   }
 
   .payment {

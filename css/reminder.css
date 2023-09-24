@@ -120,7 +120,7 @@
 
 @media screen and (max-width: 768px) {
   .header_people {
-    width: 39%;
+    width: 120%;
     display: block;
     margin-top: 70%;
     margin-left: -2%;
@@ -157,7 +157,11 @@
   }
 
   .Surroundings {
-    margin-right: 100px;
+    margin-right: 70px;
+  }
+
+  .Birthdays {
+    padding-right: 30px;
   }
 
   .Birthdays, .Business_Meetings, .Friends_Family, .Surroundings {
