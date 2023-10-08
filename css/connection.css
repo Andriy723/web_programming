@@ -113,14 +113,15 @@
   }
 
   .connection_container {
-    margin-left: 8%;
+    margin-left: 14%;
     padding-top: 30px;
     width: 200%;
+    margin-right: 0;
   }
 
   .connection_text {
     font-size: 20px;
-    width: 115%;
+    width: 110%;
   }
 
   .platform {
@@ -130,9 +131,9 @@
 
   .content {
     padding-bottom: 30px;
-    width: 260%;
-    padding-right: 9px;
-    margin-left: -7%;
+    width: 240%;
+    padding-right: 19px;
+    margin-left: -3%;
     padding-left: 9px;
   }
 

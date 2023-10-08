@@ -78,7 +78,7 @@
     left: 0;
     right: 0;
     top: 0;
-    padding: 20px;
+    padding: 2px;
     background-color: white;
     z-index: 10;
     width: 100%;
@@ -113,7 +113,7 @@
   .header__menu {
     display: block;
     margin-left: 32%;
-    margin-top: 10px;
+    margin-top: 20px;
     animation: circle_rotate 3s ease-out;
   }
 
@@ -124,7 +124,7 @@
   .header_nav {
     background: #007eff;
     position: fixed;
-    top: 72px;
+    top: 65px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -134,7 +134,8 @@
   }
 
   .header_nav.open {
-    clip-path: circle(400px at top);
+    clip-path: circle(280px at top);
+    padding-top: 0;
     /*overflow-y: unset;*/
   }
 
@@ -145,7 +146,7 @@
 
   .header_nav, .header__nav-item {
     margin-right: 0;
-    padding-top: 10vh;
+    padding-top: 7vh;
     flex: 1;
   }
 
@@ -154,5 +155,6 @@
     display: block;
     font-size: 32px;
     color: white;
+    padding-left: 50px;
   }
 }
