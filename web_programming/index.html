@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View_page</title>
+  <link rel="icon" type="image/x-icon" href="images/tile.png">
+  <!-- My styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<section class="hero">
+  <header class="header">
+    <h2 class="bus_station_header">My bus station</h2>
+    <div class="container_tabs">
+      <div class="tab">
+        <button class="tablinks" onclick="Control_trolleybuses(event, 'My trolleybuses')">
+          <a href="#my_trolleybuses" id="home_button">My trolleybuses</a>
+        </button>
+
+        <button class="tablinks" onclick="Control_trolleybuses(event, 'Create trolleybuses')">
+          <a href="#create_trolleybuses">Create trolleybuses</a>
+        </button>
+
+        <button class="tablinks" onclick="Control_trolleybuses(event, 'Edit trolleybuses')">
+          <a href="#edit_trolleybuses">Edit trolleybuses</a>
+        </button>
+      </div>
+    </div>
+
+    <label>
+      <input class="Search_for_trolleybuses" type="search" placeholder="Search for trolleybuses..." />
+    </label>
+    <button class="search_button" id="search_button">Search</button>
+    <button class="clear_button" id="clear_button">Clear</button>
+  </header>
+
+  <div id="My trolleybuses" class="tabcontent">
+
+
+    <div class="main_container">
+      <div class="manage_count">
+        <div class="manage_trolleybuses">
+          <h2 class="manage_header">Manage trolleybuses</h2>
+          <div class="sorting_container">
+            <h3 class="sort_paragraph">Sorting by the most expensive trolleybuses</h3>
+            <div class="sort_button1">
+              <input type="checkbox" class="label" id="sort_button" />
+            </div>
+          </div>
+        </div>
+
+        <div class="count_container">
+          <h3 class="count_paragraph">Count total price of trolleybuses:</h3>
+          <button class="count_button" id="count_button">Count</button>
+          <div class="total_price">
+            <p class="total_price_paragraph">Total price:</p>
+            <p class="price" id="price"></p>
+          </div>
+        </div>
+      </div>
+
+      <ul class="card_field">
+
+      </ul>
+    </div>
+  </div>
+
+  <div id="Create trolleybuses" class="tabcontent">
+    <div class="creation_container">
+      <form id="add_form1" class="create_form">
+        <h1 class="create_paragraph">Create trolleybus</h1><br>
+
+        <div class="form_without_header">
+          <div class="create_container">
+            <label for="title_input1" class="form-label">Title:</label><br>
+            <input type="text" class="form-control1" id="title_input1"
+                   placeholder="Enter title..." required /><br><br>
+          </div>
+
+          <div class="description_container">
+            <label for="description_input1" class="form-label">Description:</label>
+            <textarea type="text" class="form-control2" id="description_input1"
+                      placeholder="Enter description..." required></textarea><br>
+          </div>
+
+          <div class="price_container">
+            <label for="price_input1" class="form-label">Daily price ($):</label><br>
+            <input type="number" class="form-control3" id="price_input1"
+                   placeholder="Enter price..." required /><br><br>
+          </div>
+
+          <div class="type_container">
+            <label for="type_trolleybus1" class="form_label">Trolleybus type:</label><br>
+            <select id="type_trolleybus1" name="type_trolleybus" class="form-control4" required>
+              <option value="select">Select type</option>
+              <option value="40_people">For 40 people</option>
+              <option value="30_people">For 30 people</option>
+              <option value="70_people">For 70 people</option>
+            </select><br><br><br>
+          </div>
+
+          <button id="submit_button1" type="submit" class="submit_button">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="Edit trolleybuses" class="tabcontent">
+    <div class="creation_container">
+      <form id="add_form2" class="create_form">
+        <h1 class="create_paragraph">Edit trolleybus</h1><br>
+
+        <div class="form_without_header">
+          <div class="create_container">
+            <label for="title_input2" class="form-label">Title:</label><br>
+            <input type="text" class="form-control1" id="title_input2"
+                   placeholder="Enter title..." required /><br><br>
+          </div>
+
+          <div class="description_container">
+            <label for="description_input2" class="form-label">Description:</label>
+            <textarea type="text" class="form-control2" id="description_input2"
+                      placeholder="Enter description..." required></textarea><br>
+          </div>
+
+          <div class="price_container">
+            <label for="price_input2" class="form-label">Daily price ($):</label><br>
+            <input type="number" class="form-control3" id="price_input2"
+                   placeholder="Enter price..." required /><br><br>
+          </div>
+
+          <div class="type_container">
+            <label for="type_trolleybus2" class="form_label">Trolleybus type:</label><br>
+            <select id="type_trolleybus2" name="type_trolleybus" class="form-control4" required>
+              <option value="select">Select type</option>
+              <option value="40_people">For 40 people</option>
+              <option value="30_people">For 30 people</option>
+              <option value="70_people">For 70 people</option>
+            </select><br><br><br>
+          </div>
+
+          <button id="submit_button2" type="submit" class="submit_button">Change</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="modal-message"></p>
+    </div>
+  </div>
+
+</section>
+
+<script>
+  function Control_trolleybuses(evt, element) {
+    let i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(element).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+  Control_trolleybuses({ currentTarget: document.getElementById("home_button") }, "My trolleybuses");
+</script>
+
+<script type="module" src="./js/index.js"></script>
+</body>
+
+</html>
