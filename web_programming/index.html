@@ -31,7 +31,7 @@
     </div>
 
     <label>
-      <input class="Search_for_trolleybuses" type="search" placeholder="Search for trolleybuses..." />
+      <input id="search" class="Search_for_trolleybuses" type="search" placeholder="Search for trolleybuses..." />
     </label>
     <button class="search_button" id="search_button">Search</button>
     <button class="clear_button" id="clear_button">Clear</button>
@@ -39,16 +39,16 @@
 
   <div id="My trolleybuses" class="tabcontent">
 
-
     <div class="main_container">
       <div class="manage_count">
         <div class="manage_trolleybuses">
           <h2 class="manage_header">Manage trolleybuses</h2>
           <div class="sorting_container">
             <h3 class="sort_paragraph">Sorting by the most expensive trolleybuses</h3>
-            <div class="sort_button1">
-              <input type="checkbox" class="label" id="sort_button" />
-            </div>
+            <label class="ii">
+              <input type="checkbox" class="checkbox_" id="sort_button">
+              <span><i></i></span>
+            </label>
           </div>
         </div>
 

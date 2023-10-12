@@ -80,24 +80,21 @@ function deleteTrolleybus(index) {
 }
 
 const trolleybuses = [];
-let shouldSort = true;
 let sortDescending = true;
 
 function sortTrolleybuses() {
-  if (shouldSort) {
-    trolleybuses.sort((a, b) => {
-      if (sortDescending) {
-        return b.price - a.price;
-      } else {
-        return a.price - b.price;
-      }
-    });
-  }
+  trolleybuses.sort((a, b) => {
+    if (sortDescending) {
+      return b.price - a.price;
+    } else {
+      return a.price - b.price;
+    }
+  });
   displayTrolleybuses(trolleybuses);
 }
 
+
 document.getElementById("sort_button").addEventListener("click", function () {
-  shouldSort = !shouldSort;
   sortTrolleybuses();
   searchTrolleybuses();
 });
