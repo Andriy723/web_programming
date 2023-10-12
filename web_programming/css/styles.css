@@ -153,7 +153,7 @@
 }
 
 .card_body {
-  height: 180px;
+  height: 220px;
   flex-wrap: wrap;
 }
 
@@ -174,7 +174,12 @@
 }
 
 .card-description {
-  padding: 7px 7px 7px 27px;
+  width: 210px;
+  padding: 37px 7px 7px 27px;
+  inline-size: 150px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  margin: 0;
 }
 
 .card-price {
