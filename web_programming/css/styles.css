@@ -21,6 +21,7 @@
   background-color: black;
   border: 3px solid #29e005;
   text-align: center;
+  box-shadow: 1px 1px 10px 4px #3e9525;
 }
 
 .Search_for_trolleybuses::placeholder {
@@ -35,6 +36,7 @@
   border-radius: 13px;
   border: 3px solid #6c94f6;
   color: #6c94f6;
+  box-shadow: 1px 1px 10px 4px #0445e6;
 }
 
 .clear_button {
@@ -45,6 +47,7 @@
   border-radius: 13px;
   border: 3px solid #f43737;
   color: #f43737;
+  box-shadow: 1px 1px 10px 4px #e60d0d;
 }
 
 .main_container {
@@ -99,6 +102,7 @@
   border-radius: 20px;
   border: none;
   margin-left: 115px;
+  box-shadow: 5px 15px 25px #05be0566;
 }
 
 .total_price {
@@ -140,6 +144,7 @@
   text-align: start;
   margin-bottom: 30px;
   padding-bottom: 10px;
+  box-shadow: 5px 5px 10px #000000;
 }
 
 .card-img {
@@ -319,9 +324,10 @@ a {
   background: #0445e6;
   height: 40px;
   width: 287px;
-  border: 2px solid #ffffff;
+  border: none;
   color: white;
   border-radius: 7px;
+  box-shadow: 5px 9px 10px #00b2ff;
 }
 
 .modal {
