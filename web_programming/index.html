@@ -76,20 +76,20 @@
         <div class="form_without_header">
           <div class="create_container">
             <label for="title_input1" class="form-label">Title:</label><br>
-            <input type="text" class="form-control1" id="title_input1"
-                   placeholder="Enter title..." required /><br><br>
+            <input type="text" class="form-control1" id="title_input1" placeholder="Enter title..." required pattern=".{3,}">
+            <br><br>
           </div>
 
           <div class="description_container">
             <label for="description_input1" class="form-label">Description:</label>
             <textarea type="text" class="form-control2" id="description_input1"
-                      placeholder="Enter description..." required></textarea><br>
+                      placeholder="Enter description..." required minlength="5"></textarea><br>
           </div>
 
           <div class="price_container">
             <label for="price_input1" class="form-label">Daily price ($):</label><br>
-            <input type="number" class="form-control3" id="price_input1"
-                   placeholder="Enter price..." required /><br><br>
+            <input type="number" class="form-control3" id="price_input1" placeholder="Enter price..." required min="0.0">
+            <br><br>
           </div>
 
           <div class="type_container">
@@ -117,19 +117,19 @@
           <div class="create_container">
             <label for="title_input2" class="form-label">Title:</label><br>
             <input type="text" class="form-control1" id="title_input2"
-                   placeholder="Enter title..." required /><br><br>
+                   placeholder="Enter title..." required pattern=".{3,}"/><br><br>
           </div>
 
           <div class="description_container">
             <label for="description_input2" class="form-label">Description:</label>
             <textarea type="text" class="form-control2" id="description_input2"
-                      placeholder="Enter description..." required></textarea><br>
+                      placeholder="Enter description..." required minlength="5"></textarea><br>
           </div>
 
           <div class="price_container">
             <label for="price_input2" class="form-label">Daily price ($):</label><br>
             <input type="number" class="form-control3" id="price_input2"
-                   placeholder="Enter price..." required /><br><br>
+                   placeholder="Enter price..." required min="0.0"/><br><br>
           </div>
 
           <div class="type_container">

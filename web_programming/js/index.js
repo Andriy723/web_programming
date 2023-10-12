@@ -11,7 +11,7 @@ function displayTrolleybuses() {
     trolleybusItem.innerHTML = `
             <img src="images/trolleybus.png" class="card-img" alt="card"/>
             <div class="card_body">
-                <h4 class="card-title">Title: ${trolleybus.title}</h4>
+                <h4 class="card-title">Name: ${trolleybus.title}</h4>
                 <p class="card-description">Description: ${trolleybus.description}</p>
                 <p class="card-price">Price: $${trolleybus.price.toFixed(2)}</p>
                 <p class="card-type">Type: ${trolleybus.type}</p>
@@ -28,32 +28,32 @@ function displayTrolleybuses() {
   document.addEventListener("DOMContentLoaded", function() {
     const defaultTrolleybuses = [
       {
-        title: "sdfdbfn",
-        description: "ht5rgdfdww",
-        price: 40.00,
+        title: "RECV-21",
+        description: "Trolleybus for 40 people with green colour. Go to the LPNU",
+        price: 4.24,
         type: "40_people",
       },
       {
-        title: "fvbfhr",
-        description: "bfhrgdfry4",
-        price: 220.00,
+        title: "RFDB-35",
+        description: "Trolleybus for 70 people with redish colour. Go to the Suhiv",
+        price: 2.45,
         type: "70_people",
       },
       {
-        title: "fvgfhret",
-        description: "fegrhtrtegd",
-        price: 70.00,
+        title: "BGFDS-235-A",
+        description: "Trolleybus for 70 people with black colour. Used to cross the border",
+        price: 7.33,
         type: "70_people",
       },
       {
-        title: "fvhrge",
-        description: "ghmythr",
-        price: 80.00,
-        type: "70_people",
+        title: "RFSUSO-1011",
+        description: "Trolleybus for 40 people with yellow colour. Go to Olga street",
+        price: 18.00,
+        type: "40_people",
       },
       {
-        title: "frfrf",
-        description: "gthrg",
+        title: "RYAGU",
+        description: "Trolleybus for 30 people with yellow colour. Go to Epicenter",
         price: 10.00,
         type: "30_people",
       }
@@ -216,4 +216,10 @@ function showModal(message) {
 
 span.onclick = function() {
   modal.style.display = "none";
+};
+
+window.onclick = function(event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
 };
