@@ -149,7 +149,7 @@ document.getElementById("add_form1").addEventListener("submit", function (e) {
   const priceInput = document.getElementById("price_input1").value.trim();
   const typeInput = document.getElementById("type_trolleybus1").value;
   if (titleInput && descriptionInput && priceInput && typeInput !== "select") {
-    createTrolleybus(titleInput, descriptionInput, priceInput, typeInput);
+    createTrolleybus(titleInput, descriptionInput, parseFloat(priceInput), typeInput);
     document.getElementById("add_form1").reset();
   }
 });
