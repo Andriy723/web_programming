@@ -63,6 +63,37 @@ function displayTrolleybuses() {
         });
 }
 
+function deleteTrolleybus(trolleybusId) {
+    fetch(`http://localhost:8080/trolleybuses/${trolleybusId}`, {
+        method: 'DELETE',
+    })
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .then(() => {
+            trolleybuses = trolleybuses.filter((trolleybus) => trolleybus.id !== trolleybusId);
+            displayTrolleybuses();
+            showModal("Trolleybus was deleted");
+        })
+        .catch((error) => {
+            console.error("Error while deleting:", error);
+        });
+}
+
+document.querySelector(".card_field").addEventListener("click", function(event) {
+
+    if (event.target.classList.contains("delete_button")) {
+        const trolleybusId = event.target.dataset.trolleybusId;
+        deleteTrolleybus(trolleybusId);
+        displayTrolleybuses();
+    }
+});
+
+
+displayTrolleybuses();
+
 function createTrolleybus(title, description, price, type) {
     const newTrolleybus = {
         title: title,
@@ -73,13 +104,6 @@ function createTrolleybus(title, description, price, type) {
     trolleybuses.push(newTrolleybus);
     displayTrolleybuses();
 }
-
-function deleteTrolleybus(index) {
-    trolleybuses.splice(index, 1);
-}
-
-const trolleybuses = [];
-let sortDescending = true;
 
 function sortTrolleybuses() {
     trolleybuses.sort((a, b) => {
@@ -138,7 +162,22 @@ function searchTrolleybuses() {
     });
 }
 
+let trolleybuses = [];
+let shouldSort = true;
+let sortDescending = true;
+
 document.getElementById("count_button").addEventListener("click", calculateTotalPrice);
+
+function storeTrolleybuses(trolleybuses) {
+    localStorage.setItem('trolleybuses', JSON.stringify(trolleybuses));
+}
+
+function getStoredTrolleybuses() {
+    const storedTrolleybuses = localStorage.getItem('trolleybuses');
+    return storedTrolleybuses ? JSON.parse(storedTrolleybuses) : [];
+}
+
+displayTrolleybuses();
 
 
 document.getElementById("add_form1").addEventListener("submit", function (e) {
