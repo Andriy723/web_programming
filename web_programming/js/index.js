@@ -213,33 +213,72 @@ document.querySelector(".card_field").addEventListener("click", function(event) 
 });
 
 
-let editedTrolleybusId = null;
-function editTrolleybus(index, title, description, price, type) {
-    const editedTrolleybus = trolleybuses[index];
-    editedTrolleybus.title = title;
-    editedTrolleybus.description = description;
-    editedTrolleybus.price = parseFloat(price);
-    editedTrolleybus.type = type;
-    displayTrolleybuses();
+function editTrolleybus(trolleybusId) {
+    fetch(`http://localhost:8080/trolleybuses/${trolleybusId}`)
+        .then((response) => response.json())
+        .then((trolleybus) => {
+            document.getElementById("title_input2").value = trolleybus.title;
+            document.getElementById("description_input2").value = trolleybus.description;
+            document.getElementById("price_input2").value = trolleybus.price.toFixed(2); // Format the price
+            document.getElementById("type_trolleybus2").value = trolleybus.type;
 
-    Control_trolleybuses({ currentTarget: document.getElementById("home_button") }, "My trolleybuses");
+            document.getElementById("add_form2").style.display = "block";
+            document.getElementById("add_form1").style.display = "none";
+            Control_trolleybuses({ currentTarget: document.getElementById("edit_button") }, "Edit trolleybuses");
+            calculateTotalPrice();
 
-    editedTrolleybusId = null;
+            document.getElementById("submit_button2").addEventListener("click", function () {
+                saveEditedTrolleybus(trolleybusId);
+            });
+        })
+        .catch((error) => {
+            console.error("Error fetching trolleybus data for editing:", error);
+        });
+
+    document.getElementById("submit_button2").addEventListener("click", function () {
+        saveEditedTrolleybus(trolleybusId);
+    });
+}
+
+function saveEditedTrolleybus(trolleybusId) {
+    const title = document.getElementById("title_input2").value;
+    const description = document.getElementById("description_input2").value;
+    const price = parseFloat(document.getElementById("price_input2").value);
+    const type = document.getElementById("type_trolleybus2").value;
+
+    if (title && description && !isNaN(price) && type) {
+        const editedTrolleybusData = {
+            title,
+            description,
+            price,
+            type,
+        };
+        fetch(`http://localhost:8080/trolleybuses/${trolleybusId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(editedTrolleybusData),
+        })
+            .then(() => {
+                displayTrolleybuses();
+                showModal("Trolleybus was edited");
+                Control_trolleybuses({ currentTarget: document.getElementById("home_button") }, "My trolleybuses");
+                document.getElementById("add_form2").style.display = "none";
+                document.getElementById("add_form1").style.display = "block";
+            })
+            .catch((error) => {
+                console.error("Error while editing:", error);
+            });
+    } else {
+        showModal("Please fill all fields for editing.");
+    }
 }
 
 document.querySelector(".card_field").addEventListener("click", function(event) {
     if (event.target.classList.contains("edit_button")) {
         const trolleybusId = event.target.dataset.trolleybusId;
-
-        editedTrolleybusId = trolleybusId;
-
-        const editedTrolleybus = trolleybuses[trolleybusId];
-        document.getElementById("title_input2").value = editedTrolleybus.title;
-        document.getElementById("description_input2").value = editedTrolleybus.description;
-        document.getElementById("price_input2").value = editedTrolleybus.price;
-        document.getElementById("type_trolleybus2").value = editedTrolleybus.type;
-
-        Control_trolleybuses({ currentTarget: document.getElementById("edit_button") }, "Edit trolleybuses");
+        editTrolleybus(trolleybusId);
     }
 });
 
