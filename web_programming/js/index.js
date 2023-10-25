@@ -25,7 +25,7 @@ function displayTrolleybuses() {
     trolleybusesContainer.appendChild(trolleybusItem);
   });
 
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function () {
     const defaultTrolleybuses = [
       {
         title: "RECV-21",
@@ -64,6 +64,7 @@ function displayTrolleybuses() {
   });
 }
 
+
 function createTrolleybus(title, description, price, type) {
   const newTrolleybus = {
     title: title,
@@ -73,6 +74,10 @@ function createTrolleybus(title, description, price, type) {
   };
   trolleybuses.push(newTrolleybus);
   displayTrolleybuses();
+  alert("Object was created")
+
+  Control_trolleybuses({ currentTarget: document.getElementById("home_button") }, "My trolleybuses");
+
 }
 
 function deleteTrolleybus(index) {
