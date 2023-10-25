@@ -145,7 +145,10 @@ document.getElementById("sort_button").addEventListener("click", function () {
 });
 
 
+document.getElementById("count_button").addEventListener("click", calculateTotalPrice);
+
 function calculateTotalPrice() {
+    const trolleybuses = getStoredTrolleybuses(); // Get the trolleybus data from local storage
     const searchInput = document.querySelector(".Search_for_trolleybuses");
     const searchValue = searchInput.value.toLowerCase();
     const visibleTrolleybuses = trolleybuses.filter((trolleybus) => {
@@ -153,7 +156,7 @@ function calculateTotalPrice() {
         return title.includes(searchValue);
     });
 
-    const totalPrice = visibleTrolleybuses.reduce((total, trolleybus) => total + trolleybus.price, 0);
+    const totalPrice = visibleTrolleybuses.reduce((total, trolleybus) => total + parseFloat(trolleybus.price), 0);
     document.getElementById("price").textContent = `$${totalPrice.toFixed(2)}`;
 }
 
@@ -186,8 +189,6 @@ function searchTrolleybuses() {
 let trolleybuses = [];
 let shouldSort = true;
 let sortDescending = true;
-
-document.getElementById("count_button").addEventListener("click", calculateTotalPrice);
 
 function storeTrolleybuses(trolleybuses) {
     localStorage.setItem('trolleybuses', JSON.stringify(trolleybuses));
