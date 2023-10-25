@@ -82,16 +82,6 @@ function deleteTrolleybus(trolleybusId) {
         });
 }
 
-document.querySelector(".card_field").addEventListener("click", function(event) {
-
-    if (event.target.classList.contains("delete_button")) {
-        const trolleybusId = event.target.dataset.trolleybusId;
-        deleteTrolleybus(trolleybusId);
-        displayTrolleybuses();
-    }
-});
-
-
 displayTrolleybuses();
 
 function createTrolleybus(title, description, price, type) {
@@ -126,129 +116,6 @@ function createTrolleybus(title, description, price, type) {
 }
 
 displayTrolleybuses();
-
-let trolleybuses = [];
-let shouldSort = true;
-let sortDescending = true;
-
-function sortTrolleybuses() {
-    const sortedTrolleybuses = [...trolleybuses];
-
-    if (shouldSort) {
-        sortedTrolleybuses.sort((a, b) => {
-            if (sortDescending) {
-                return b.price - a.price;
-            } else {
-                return a.price - b.price;
-            }
-        });
-    }
-    displayTrolleybuses(sortedTrolleybuses);
-}
-
-document.getElementById("sort_button").addEventListener("click", function () {
-    sortDescending = !sortDescending;
-    localStorage.setItem('sortDescending', sortDescending);
-    displayTrolleybuses();
-    sortTrolleybuses();
-    searchTrolleybuses();
-});
-
-window.onload = function () {
-    displayTrolleybuses();
-};
-
-
-document.getElementById("count_button").addEventListener("click", calculateTotalPrice);
-
-function calculateTotalPrice() {
-    const trolleybuses = getStoredTrolleybuses(); // Get the trolleybus data from local storage
-    const searchInput = document.querySelector(".Search_for_trolleybuses");
-    const searchValue = searchInput.value.toLowerCase();
-    const visibleTrolleybuses = trolleybuses.filter((trolleybus) => {
-        const title = trolleybus.title.toLowerCase();
-        return title.includes(searchValue);
-    });
-
-    const totalPrice = visibleTrolleybuses.reduce((total, trolleybus) => total + parseFloat(trolleybus.price), 0);
-    document.getElementById("price").textContent = `$${totalPrice.toFixed(2)}`;
-}
-
-
-displayTrolleybuses();
-
-document.getElementById("clear_button").addEventListener("click", () => {
-    const searchInput = document.querySelector(".Search_for_trolleybuses");
-    searchInput.value = "";
-    searchTrolleybuses();
-});
-
-document.getElementById("search_button").addEventListener("click", searchTrolleybuses);
-
-function searchTrolleybuses() {
-    const searchInput = document.querySelector(".Search_for_trolleybuses");
-    const searchValue = searchInput.value.toLowerCase();
-    const trolleybusItems = document.querySelectorAll(".item-card");
-
-    trolleybusItems.forEach((trolleybusItem) => {
-        const title = trolleybusItem.querySelector(".card-title").textContent.toLowerCase();
-        if (title.includes(searchValue)) {
-            trolleybusItem.style.display = "block";
-        } else {
-            trolleybusItem.style.display = "none";
-        }
-    });
-}
-
-function storeTrolleybuses(trolleybuses) {
-    localStorage.setItem('trolleybuses', JSON.stringify(trolleybuses));
-}
-
-function getStoredTrolleybuses() {
-    const storedTrolleybuses = localStorage.getItem('trolleybuses');
-    return storedTrolleybuses ? JSON.parse(storedTrolleybuses) : [];
-}
-
-displayTrolleybuses();
-
-
-document.getElementById("add_form1").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const titleInput = document.getElementById("title_input1").value.trim();
-    const descriptionInput = document.getElementById("description_input1").value.trim();
-    const priceInput = document.getElementById("price_input1").value.trim();
-    const typeInput = document.getElementById("type_trolleybus1").value.trim();
-    if (titleInput && descriptionInput && priceInput && typeInput !== "select") {
-        createTrolleybus(titleInput, descriptionInput, priceInput, typeInput);
-        document.getElementById("add_form1").reset();
-    }
-});
-
-document.getElementById("add_form2").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const titleInput = document.getElementById("title_input2").value.trim();
-    const descriptionInput = document.getElementById("description_input2").value.trim();
-    const priceInput = document.getElementById("price_input2").value.trim();
-    const typeInput = document.getElementById("type_trolleybus2").value;
-    if (
-        titleInput &&
-        descriptionInput &&
-        priceInput &&
-        typeInput
-    ) {
-        editTrolleybus(titleInput, descriptionInput, parseInt(priceInput), typeInput);
-        document.getElementById("add_form2").reset();
-    }
-});
-
-document.querySelector(".card_field").addEventListener("click", function(event) {
-    if (event.target.classList.contains("delete_button")) {
-        const trolleybusId = event.target.dataset.trolleybusId;
-        deleteTrolleybus(trolleybusId);
-        displayTrolleybuses();
-    }
-});
-
 
 function editTrolleybus(trolleybusId) {
     fetch(`http://localhost:8080/trolleybuses/${trolleybusId}`)
@@ -319,6 +186,124 @@ document.querySelector(".card_field").addEventListener("click", function(event) 
     }
 });
 
+let trolleybuses = [];
+let shouldSort = true;
+let sortDescending = true;
+
+function sortTrolleybuses() {
+    const sortedTrolleybuses = [...trolleybuses];
+
+    if (shouldSort) {
+        sortedTrolleybuses.sort((a, b) => {
+            if (sortDescending) {
+                return b.price - a.price;
+            } else {
+                return a.price - b.price;
+            }
+        });
+    }
+    displayTrolleybuses(sortedTrolleybuses);
+}
+
+document.getElementById("sort_button").addEventListener("click", function () {
+    sortDescending = !sortDescending;
+    localStorage.setItem('sortDescending', sortDescending);
+    displayTrolleybuses();
+    sortTrolleybuses();
+    searchTrolleybuses();
+});
+
+window.onload = function () {
+    displayTrolleybuses();
+};
+
+document.getElementById("count_button").addEventListener("click", calculateTotalPrice);
+
+function calculateTotalPrice() {
+    const trolleybuses = getStoredTrolleybuses(); // Get the trolleybus data from local storage
+    const searchInput = document.querySelector(".Search_for_trolleybuses");
+    const searchValue = searchInput.value.toLowerCase();
+    const visibleTrolleybuses = trolleybuses.filter((trolleybus) => {
+        const title = trolleybus.title.toLowerCase();
+        return title.includes(searchValue);
+    });
+
+    const totalPrice = visibleTrolleybuses.reduce((total, trolleybus) => total + parseFloat(trolleybus.price), 0);
+    document.getElementById("price").textContent = `$${totalPrice.toFixed(2)}`;
+}
+
+function storeTrolleybuses(trolleybuses) {
+    localStorage.setItem('trolleybuses', JSON.stringify(trolleybuses));
+}
+
+function getStoredTrolleybuses() {
+    const storedTrolleybuses = localStorage.getItem('trolleybuses');
+    return storedTrolleybuses ? JSON.parse(storedTrolleybuses) : [];
+}
+
+displayTrolleybuses();
+
+document.getElementById("clear_button").addEventListener("click", () => {
+    const searchInput = document.querySelector(".Search_for_trolleybuses");
+    searchInput.value = "";
+    searchTrolleybuses();
+});
+
+document.getElementById("search_button").addEventListener("click", searchTrolleybuses);
+
+function searchTrolleybuses() {
+    const searchInput = document.querySelector(".Search_for_trolleybuses");
+    const searchValue = searchInput.value.toLowerCase();
+    const trolleybusItems = document.querySelectorAll(".item-card");
+
+    trolleybusItems.forEach((trolleybusItem) => {
+        const title = trolleybusItem.querySelector(".card-title").textContent.toLowerCase();
+        if (title.includes(searchValue)) {
+            trolleybusItem.style.display = "block";
+        } else {
+            trolleybusItem.style.display = "none";
+        }
+    });
+}
+
+document.getElementById("add_form1").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const titleInput = document.getElementById("title_input1").value.trim();
+    const descriptionInput = document.getElementById("description_input1").value.trim();
+    const priceInput = document.getElementById("price_input1").value.trim();
+    const typeInput = document.getElementById("type_trolleybus1").value.trim();
+    if (titleInput && descriptionInput && priceInput && typeInput !== "select") {
+        createTrolleybus(titleInput, descriptionInput, priceInput, typeInput);
+        document.getElementById("add_form1").reset();
+    }
+});
+
+document.getElementById("add_form2").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const titleInput = document.getElementById("title_input2").value.trim();
+    const descriptionInput = document.getElementById("description_input2").value.trim();
+    const priceInput = document.getElementById("price_input2").value.trim();
+    const typeInput = document.getElementById("type_trolleybus2").value;
+    if (
+        titleInput &&
+        descriptionInput &&
+        priceInput &&
+        typeInput
+    ) {
+        editTrolleybus(titleInput, descriptionInput, parseInt(priceInput), typeInput);
+        document.getElementById("add_form2").reset();
+    }
+});
+
+document.querySelector(".card_field").addEventListener("click", function(event) {
+
+    if (event.target.classList.contains("delete_button")) {
+        const trolleybusId = event.target.dataset.trolleybusId;
+        deleteTrolleybus(trolleybusId);
+        displayTrolleybuses();
+    }
+});
+
 const modal = document.getElementById("myModal");
 const modalMessage = document.getElementById("modal-message");
 const span = document.getElementsByClassName("close")[0];
@@ -330,10 +315,4 @@ function showModal(message) {
 
 span.onclick = function() {
     modal.style.display = "none";
-};
-
-window.onclick = function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
 };
