@@ -166,7 +166,6 @@ document.getElementById("clear_button").addEventListener("click", () => {
     searchTrolleybuses();
 });
 
-
 document.getElementById("search_button").addEventListener("click", searchTrolleybuses);
 
 function searchTrolleybuses() {
