@@ -98,12 +98,34 @@ function createTrolleybus(title, description, price, type) {
     const newTrolleybus = {
         title: title,
         description: description,
-        price: parseFloat(price),
+        price: parseInt(price),
         type: type,
     };
     trolleybuses.push(newTrolleybus);
-    displayTrolleybuses();
+
+    storeTrolleybuses(trolleybuses);
+
+    fetch('http://localhost:8080/trolleybuses', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newTrolleybus),
+    })
+        .then((response) => response.json())
+        .then(() => {
+            trolleybuses.push(newTrolleybus);
+            displayTrolleybuses();
+            showModal("Trolleybus was created");
+            Control_trolleybuses({ currentTarget: document.getElementById("home_button") }, "My trolleybuses");
+        })
+        .catch((error) => {
+            console.error("Error while creating:", error);
+            Control_trolleybuses({ currentTarget: document.getElementById("home_button") }, "My trolleybuses");
+        });
 }
+
+displayTrolleybuses();
 
 function sortTrolleybuses() {
     trolleybuses.sort((a, b) => {
@@ -185,9 +207,9 @@ document.getElementById("add_form1").addEventListener("submit", function (e) {
     const titleInput = document.getElementById("title_input1").value.trim();
     const descriptionInput = document.getElementById("description_input1").value.trim();
     const priceInput = document.getElementById("price_input1").value.trim();
-    const typeInput = document.getElementById("type_trolleybus1").value;
+    const typeInput = document.getElementById("type_trolleybus1").value.trim();
     if (titleInput && descriptionInput && priceInput && typeInput !== "select") {
-        createTrolleybus(titleInput, descriptionInput, parseFloat(priceInput), typeInput);
+        createTrolleybus(titleInput, descriptionInput, priceInput, typeInput);
         document.getElementById("add_form1").reset();
     }
 });
@@ -198,8 +220,13 @@ document.getElementById("add_form2").addEventListener("submit", function (e) {
     const descriptionInput = document.getElementById("description_input2").value.trim();
     const priceInput = document.getElementById("price_input2").value.trim();
     const typeInput = document.getElementById("type_trolleybus2").value;
-    if (titleInput && descriptionInput && priceInput && typeInput !== "select" && editedTrolleybusId !== null) {
-        editTrolleybus(editedTrolleybusId, titleInput, descriptionInput, parseFloat(priceInput), typeInput);
+    if (
+        titleInput &&
+        descriptionInput &&
+        priceInput &&
+        typeInput
+    ) {
+        editTrolleybus(titleInput, descriptionInput, parseInt(priceInput), typeInput);
         document.getElementById("add_form2").reset();
     }
 });
