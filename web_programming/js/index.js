@@ -127,22 +127,36 @@ function createTrolleybus(title, description, price, type) {
 
 displayTrolleybuses();
 
+let trolleybuses = [];
+let shouldSort = true;
+let sortDescending = true;
+
 function sortTrolleybuses() {
-    trolleybuses.sort((a, b) => {
-        if (sortDescending) {
-            return b.price - a.price;
-        } else {
-            return a.price - b.price;
-        }
-    });
-    displayTrolleybuses(trolleybuses);
+    const sortedTrolleybuses = [...trolleybuses];
+
+    if (shouldSort) {
+        sortedTrolleybuses.sort((a, b) => {
+            if (sortDescending) {
+                return b.price - a.price;
+            } else {
+                return a.price - b.price;
+            }
+        });
+    }
+    displayTrolleybuses(sortedTrolleybuses);
 }
 
-
 document.getElementById("sort_button").addEventListener("click", function () {
+    sortDescending = !sortDescending;
+    localStorage.setItem('sortDescending', sortDescending);
+    displayTrolleybuses();
     sortTrolleybuses();
     searchTrolleybuses();
 });
+
+window.onload = function () {
+    displayTrolleybuses();
+};
 
 
 document.getElementById("count_button").addEventListener("click", calculateTotalPrice);
@@ -185,10 +199,6 @@ function searchTrolleybuses() {
         }
     });
 }
-
-let trolleybuses = [];
-let shouldSort = true;
-let sortDescending = true;
 
 function storeTrolleybuses(trolleybuses) {
     localStorage.setItem('trolleybuses', JSON.stringify(trolleybuses));
