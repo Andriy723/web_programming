@@ -49,7 +49,7 @@ public class TrolleybusController {
         }
     }
     @PostMapping
-    public ResponseEntity createStadium(
+    public ResponseEntity createTrolleybus(
             final @RequestBody TrolleybusDTO trolleybus) {
          ResponseEntity.ok(trolleybusMapper.map(
                 trolleybusService.addTrolleybus(

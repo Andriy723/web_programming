@@ -24,7 +24,7 @@ public class TrolleybusWriter {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd_MM_yy");
         Date date = new Date();
         String file = directory + "TrolleybusesDB" + File.separator
-                + "stadium_" + dateFormat.format(date) + ".csv";
+                + "trolleybus_" + dateFormat.format(date) + ".csv";
         boolean exists = new File(file).exists();
         try (CSVWriter writer = new CSVWriter(new OutputStreamWriter(
                 new FileOutputStream(file, true),
