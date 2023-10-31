@@ -1,0 +1,22 @@
+.trolleybuses {
+    margin-top: 80px;
+    display: flex;
+}
+
+.trolleybuses_info {
+    padding-left: 50px;
+}
+
+.trolleybuses img {
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-left: 75px;
+}
+
+.trolleybuses_info p {
+    font-size: 22px;
+}
+
+.trolleybuses_info h2 {
+    font-size: 29px;
+}
