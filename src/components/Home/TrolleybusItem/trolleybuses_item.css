@@ -1,0 +1,26 @@
+.trolleybuses_item {
+    margin-top: 160px;
+    display: block;
+}
+
+.trolleybuses_item_info {
+    padding-left: 50px;
+}
+
+.trolleybuses_item img {
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    display: flex;
+    margin-left: 87px;
+}
+
+.trolleybuses_item_info p {
+    font-size: 19px;
+    width: 350px;
+    margin-left: 50px;
+}
+
+.trolleybuses_item_info h2 {
+    font-size: 29px;
+    margin-left: 50px;
+}

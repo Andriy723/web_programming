@@ -38,6 +38,10 @@
     color: black;
 }
 
+.header__category1 a:hover {
+    color: #29e005;
+}
+
 .header__category, .header__category1  {
     margin-right: 100px;
     padding: 6px 31px;
@@ -71,7 +75,7 @@
 }
 
 .header__category a:active, .header__category a:before, .header__category a:hover, .header__category a:after {
-    color: #976c6c;
+    color: #29e005;
 }
 
 .header__category:before, .header__category1:before {

@@ -7,7 +7,7 @@ import Trolleybuses from "./Trolleybuses/trolleybuses";
 
 function Catalog() {
     const trolleybusesItemList = [
-        { id: 1, title: 'TRHD-533', description:'hrrehre', price: 10.00, type: 'for_50people' },
+        { id: 1, img: <img src="/icons/big_trolleybus.png" alt="photo1" width="370" height="220"/>, title: 'TRHD-533', description:'hrrehre', price: 10.00, type: 'for_50people' },
         { id: 2, title: 'GYUJNE-222', description:'hetfd', price: 8.00, type: 'for_70people' },
         { id: 3, title: '76DJHG', description:'kinjte', price: 2.00, type: 'for_30people' },
         { id: 4, title: 'GYEBGEY', description:'rfvghuytrdhjytfd', price: 45.00, type: 'for_70people' },

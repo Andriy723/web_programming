@@ -1,5 +1,5 @@
 .photos_part {
-    margin-top: 230px;
+    margin-top: 10px;
     font-family: "Gilroy-Regular";
     padding-bottom: 210px;
 }
@@ -8,36 +8,6 @@
     margin-left: 80px;
     display: flex;
     text-align: center;
-}
-
-.photos_part__nav_i_h_p1 img, .photos_part__nav_i_h_p2 img, .photos_part__nav_i_h_p3 img  {
-    aspect-ratio: 1;
-    border-radius: 20px;
-    opacity: 1;
-    transition: .5s;
-    cursor: pointer;
-}
-
-.photos_part__nav_i_h_p1 img:hover, .photos_part__nav_i_h_p2 img:hover, .photos_part__nav_i_h_p3 img:hover {
-    opacity: .8;
-}
-
-.photos_part__nav_i_h_p1, .photos_part__nav_i_h_p2, .photos_part__nav_i_h_p3 {
-    padding-left: 50px;
-    text-align: center;
-}
-
-.photos_part_h_p1, .photos_part_h_p2, .photos_part_h_p3 {
-    width: 350px;
-    margin-left: 13px;
-}
-
-.photos_part_header1, .photos_part_header2, .photos_part_header3 {
-    font-size: 28px;
-}
-
-.photos_part_paragraph_1, .photos_part_paragraph_2, .photos_part_paragraph_3 {
-    font-size: 18px;
 }
 
 .view_more_button a {
@@ -129,13 +99,14 @@
     position: relative;
     z-index: 0;
     border-radius: 30px;
-    font-size: 22px;
+    font-size: 21px;
     ser-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
     width: 190px;
     height: 57px;
-    margin-top: 130px;
+    margin-top: 123px;
     margin-left: 630px;
+    scale: 1.08;
     padding: 0.5em 2em;
 }

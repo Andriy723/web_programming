@@ -7,6 +7,8 @@ import './components/Home/PhotosPart/photos_part.css'
 import './components/Home/Bottom/bottom.css'
 import './components/Catalog/BottomCatalog/bottom_catalog.css'
 import './components/Catalog/Trolleybuses/trolleybuses.css'
+import './components/Home/TrolleybusItem/trolleybuses_item.css'
+import './components/Home/home.css'
 import './components/Home/Footer/footer.css'
 import './components/Catalog/FilterCatalog/filter_catalog.css'
 import Catalog from './components/Catalog/catalog';
