@@ -1,0 +1,170 @@
+.header_people {
+  width: 55%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 333px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 150%;
+  margin-top: 60px;
+}
+
+.Surbhii, .Ripall, .Prashastii {
+  width: 380px;
+  height: 66px;
+  border-radius: 17px;
+  background: #FFF;
+  box-shadow: 0 14px 55px 0 #F2F5FA;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin-top: 49px;
+}
+
+.link_p {
+  color: #26C296;
+  margin-left: 3px;
+}
+
+.Surbhi-img, .Ripal-img, .Prashasti-img {
+  width: 33px;
+  height: 33px;
+  border-radius: 38px;
+  background: lightgray;
+  margin-left: 10px;
+}
+
+.text_Su, .text_Ri, .text_Ph {
+  color: rgba(34, 34, 34, 0.80);
+  font-size: 11px;
+  line-height: 150%;
+  font-weight: 600;
+  margin-left: 10px;
+  padding-right: 25px;
+}
+
+.reminder {
+  display: flex;
+  flex-direction: column;
+  margin: 72px 20px auto auto;
+}
+
+.reminder_header {
+  width: 306px;
+  height: 30px;
+  color: #222;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.reminder_text {
+  width: 330px;
+  height: 89px;
+  color: #73738D;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 150%;
+  margin-top: 10px;
+  margin-right: 30px;
+}
+
+.reminder_lists_1, .reminder_lists_2 {
+  color: #73738D;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 150%;
+  display: flex;
+  margin-right: 30px;
+}
+
+.remind_img {
+  width: 9px;
+  height: 7px;
+  margin-right: 3px;
+  flex-direction: row;
+  align-self: center;
+}
+
+.Birthdays, .Business_Meetings, .Friends_Family, .Surroundings {
+  color: #73738D;
+  font-size: 11px;
+  margin-right: 40px;
+  font-weight: 500;
+  line-height: 150%;
+  flex-direction: column;
+  margin-bottom: 25px;
+  height: 17px;
+  flex-grow: 1;
+  align-content: center;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.Birthdays {
+  width: 49px;
+}
+
+.Business_Meetings {
+  width: 93px;
+}
+
+.Friends_Family {
+  width: 84px;
+}
+
+.Surroundings {
+  width: 67px;
+  margin-right: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .header_people {
+    width: 120%;
+    display: block;
+    margin-top: 70%;
+    margin-left: -2%;
+    margin-right: 30px;
+  }
+
+  .Surbhii, .Ripall, .Prashastii {
+    width: 106%;
+    margin-left: -45px;
+    padding: 15px 15px 15px 5px;
+    margin-top: 20px;
+  }
+
+  .reminder_header {
+    font-size: 20px;
+    height: 10px;
+  }
+
+  .reminder_text {
+    font-size: 13px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .reminder_lists_1 {
+    width: 103%;
+  }
+
+  .reminder_lists_2 {
+    width: 103%;
+    margin-right: 25px;
+    line-height: 120%;
+    padding-bottom: 40px;
+  }
+
+  .Surroundings {
+    margin-right: 70px;
+  }
+
+  .Birthdays {
+    padding-right: 30px;
+  }
+
+  .Birthdays, .Business_Meetings, .Friends_Family, .Surroundings {
+    height: 17px;
+  }
+}

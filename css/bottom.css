@@ -1,0 +1,86 @@
+.invitation {
+  width: 773px;
+  height: 96px;
+  border-radius: 9px;
+  box-shadow:  0 14px 56px 0 #F2F5FA;
+  background: #FFF;
+  display: flex;
+  margin-top: 80px;
+  margin-left: 340px;
+}
+
+.invitation_container {
+  margin-left: 23px;
+}
+
+.invitation_text {
+  width: 459px;
+  height: 24px;
+  color: #222;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.payment {
+  width: 139px;
+  height: 13px;
+  color: #73738D;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.button_invite {
+  width: 156px;
+  height: 33px;
+  border-radius: 34px;
+  border: none;
+  background: #26C296;
+  justify-content: center;
+  align-self: center;
+  margin-top: 10px;
+  margin-left: 110px;
+  color: #FFF;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: wait;
+}
+
+.button_invite:hover, .button_invite:active {
+  background: #FFF;
+  color: #26C296;
+  border: 2px solid #26C296;
+}
+
+@media screen and (max-width: 768px) {
+  .invitation {
+    margin-left: -4%;
+    width: 120%;
+    display: block;
+    padding: 5px 2px 5px 5px;
+  }
+
+  .invitation_container {
+    margin-left: 10px;
+    margin-top: 15px;
+    width: 90%;
+  }
+
+  .invitation_text {
+    font-size: 15px;
+    height: 10px;
+    width: 110%;
+  }
+
+  .payment {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    width: 90%;
+  }
+
+  .button_invite {
+    margin-left: 70px;
+    padding-right: 0;
+  }
+}

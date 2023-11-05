@@ -1,0 +1,135 @@
+@import "./animation.css";
+
+body {
+  background: #fff;
+  font-family: Gilroy-Regular;
+  height: 1948px;
+}
+
+@media screen and (max-width: 450px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+.hero {
+  margin-right: 100px;
+  position: absolute;
+  background: url(../images/phone.png) no-repeat scroll right top;
+  background-position-x: 833px;
+  background-position-y: 97px;
+  background-size: 261px 459px;
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    background: url(../images/phone.png) no-repeat scroll left top;
+    background-position-x: 4px;
+    background-position-y: 460px;
+    background-size: 240px 400px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 15px;
+    width: 77%;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (min-width: 1650px) {
+  .hero {
+    left: 9%;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .hero {
+    left: 13%;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 2100px) {
+  .hero {
+    left: 15%;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 2300px) {
+  .hero {
+    left: 17%;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 2450px) {
+  .hero {
+    left: 19%;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .hero {
+    left: 21%;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 2700px) {
+  .hero {
+    left: 23%;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 2800px) {
+  .hero {
+    left: 25%;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 2950px) {
+  .hero {
+    left: 27%;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 3100px) {
+  .hero {
+    left: 29%;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 3300px) {
+  .hero {
+    left: 31%;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 3500px) {
+  .hero {
+    left: 33%;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 3700px) {
+  .hero {
+    left: 35%;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 3900px) {
+  .hero {
+    left: 37%;
+    position: absolute;
+  }
+}
