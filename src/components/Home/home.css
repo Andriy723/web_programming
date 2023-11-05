@@ -1,5 +1,19 @@
 .product-list {
     display: flex;
-    text-align: center;
-    align-items: center;
+    text-align: start;
+    flex-wrap: wrap;
+    margin-left: 33px;
+    gap: -70px;
+}
+
+.product-list img {
+    aspect-ratio: 1;
+    border-radius: 20px;
+    opacity: 1;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.product-list img:hover {
+    opacity: .8;
 }

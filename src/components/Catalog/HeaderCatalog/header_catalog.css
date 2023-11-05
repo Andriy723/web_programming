@@ -127,7 +127,12 @@
 
 .header_catalog__category a:active, .header_catalog__category a:before, .header_catalog__category a:hover,
 .header_catalog__category a:after {
-    color: #976c6c;
+    color: #29e005;
+}
+
+.header_catalog__category1 a:active, .header_catalog__category1 a:before, .header_catalog__category1 a:hover,
+.header_catalog__category1 a:after {
+    color: #29e005;
 }
 
 .header_catalog__category:before, .header_catalog__category1:before {
@@ -207,14 +212,15 @@
     position: relative;
     z-index: 0;
     border-radius: 30px;
-    font-size: 21px;
+    font-size: 20px;
     ser-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
     margin: 0 60px 0 0;
-    width: 140px;
-    height: 55px;
+    width: 142px;
+    height: 54px;
     text-align: center;
+    scale: 1.05;
 }
 
 @keyframes going0 {

@@ -4,9 +4,17 @@ import React, { useState } from 'react';
 function FilterCatalog() {
 
     const [selectedOption, setSelectedOption] = useState('all');
+    const [selectedOption2, setSelectedOption2] = useState('all');
+    const [selectedOption3, setSelectedOption3] = useState('all');
 
     const handleOptionChange = (event) => {
         setSelectedOption(event.target.value);
+    };
+    const handleOptionChange2 = (event) => {
+        setSelectedOption2(event.target.value);
+    };
+    const handleOptionChange3 = (event) => {
+        setSelectedOption3(event.target.value);
     };
 
     return (
@@ -31,8 +39,8 @@ function FilterCatalog() {
                         { label: 'Without a number', value: 'TRHD-533' },
                         { label: 'With big letters', value: 'GVWUU DHU' },
                     ]}
-                    value={selectedOption}
-                    onChange={handleOptionChange}
+                    value={selectedOption2}
+                    onChange={handleOptionChange2}
                 />
             </nav>
             <nav className="header_catalog__nav3">
@@ -43,8 +51,8 @@ function FilterCatalog() {
                         { label: 'For 30 people', value: 'Product 2' },
                         { label: 'For 50 people', value: 'Product 3' },
                     ]}
-                    value={selectedOption}
-                    onChange={handleOptionChange}
+                    value={selectedOption3}
+                    onChange={handleOptionChange3}
                 />
             </nav>
             <button className="button_apply">Apply</button>
