@@ -1,4 +1,19 @@
-function HeaderCatalog() {
+import {useState} from "react";
+
+function HeaderCatalog({ onSearchChange, onClearSearch }) {
+    const [searchText, setSearchText] = useState('');
+
+    const handleSearchChange = (event) => {
+        const searchValue = event.target.value.toLowerCase();
+        setSearchText(searchValue);
+        onSearchChange(searchValue);
+    };
+
+    const clearSearch = () => {
+        setSearchText('');
+        onClearSearch();
+    };
+
     return (
         <header>
             <div className="header_catalog">
@@ -15,8 +30,10 @@ function HeaderCatalog() {
                             <a href="http://localhost:3000/Cart">Cart</a></button></h2>
                     </div>
                     <div className="button_search">
-                        <input className="search_btn" type="search" placeholder="  Search..."></input>
+                        <input className="search_btn" type="search" value={searchText} placeholder="  Search..."
+                               onChange={handleSearchChange}></input>
                     </div>
+                    <button className="clear_search_btn" onClick={clearSearch}>Clear</button>
                 </nav>
             </div>
         </header>

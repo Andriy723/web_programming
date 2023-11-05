@@ -26,7 +26,7 @@
 }
 
 .logo_bottom_catalog {
-    margin-left: 380px;
+    margin-left: 387px;
     animation: 4s 1s 1 going1;
 }
 
@@ -50,7 +50,7 @@
         margin-left: 800px;
     }
     100%{
-        margin-left: 380px;
+        margin-left: 387px;
     }
 }
 

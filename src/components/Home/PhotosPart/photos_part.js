@@ -55,7 +55,7 @@ function PhotosPart() {
             {/*        </div>*/}
             {/*    </div>*/}
             {/*</nav>*/}
-            <button className="view_more_button"><a href="#View more">View more</a></button>
+            <button className="view_more_button"><a href="http://localhost:3000/Catalog">View more</a></button>
         </div>
     );
 }

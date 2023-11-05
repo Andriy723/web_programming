@@ -1,61 +1,47 @@
+import React from 'react';
 import Select from '../../Buttons/select';
-import React, { useState } from 'react';
 
-function FilterCatalog() {
-
-    const [selectedOption, setSelectedOption] = useState('all');
-    const [selectedOption2, setSelectedOption2] = useState('all');
-    const [selectedOption3, setSelectedOption3] = useState('all');
-
-    const handleOptionChange = (event) => {
-        setSelectedOption(event.target.value);
-    };
-    const handleOptionChange2 = (event) => {
-        setSelectedOption2(event.target.value);
-    };
-    const handleOptionChange3 = (event) => {
-        setSelectedOption3(event.target.value);
-    };
-
+function FilterCatalog({ onOptionChange, onApplyFilters, priceFilter, titleFilter, typeFilter, onCancelFilters }) {
     return (
         <div className="filter_catalog">
             <nav className="header_catalog__nav1">
                 <Select
                     options={[
-                        { label: 'Price', value: 'Price' },
-                        { label: 'More than 50', value: '76DJHG' },
-                        { label: 'More than 10', value: 'GVWUU DHU' },
-                        { label: 'More than 2', value: '20-HGFff' },
+                        { label: 'Price', value: 'price' },
+                        { label: 'More than 50', value: 'more_than_50' },
+                        { label: 'More than 10', value: 'more_than_10' },
+                        { label: 'More than 2', value: 'more_than_2' },
                     ]}
-                    value={selectedOption}
-                    onChange={handleOptionChange}
+                    value={priceFilter}
+                    onChange={(event) => onOptionChange('price', event)}
                 />
             </nav>
             <nav className="header_catalog__nav2">
                 <Select
                     options={[
-                        { label: 'Title', value: 'Title' },
-                        { label: 'With a number', value: '76DJHG' },
-                        { label: 'Without a number', value: 'TRHD-533' },
-                        { label: 'With big letters', value: 'GVWUU DHU' },
+                        { label: 'Title', value: 'title' },
+                        { label: 'With a number', value: 'with_number' },
+                        { label: 'Without a number', value: 'without_number' },
+                        { label: 'With big letters', value: 'uppercase' },
                     ]}
-                    value={selectedOption2}
-                    onChange={handleOptionChange2}
+                    value={titleFilter}
+                    onChange={(event) => onOptionChange('title', event)}
                 />
             </nav>
             <nav className="header_catalog__nav3">
                 <Select
                     options={[
-                        { label: 'Type', value: 'Type' },
-                        { label: 'For 70 people', value: 'Product 1' },
-                        { label: 'For 30 people', value: 'Product 2' },
-                        { label: 'For 50 people', value: 'Product 3' },
+                        { label: 'Type', value: 'type' },
+                        { label: 'For 70 people', value: 'for_70people' },
+                        { label: 'For 30 people', value: 'for_30people' },
+                        { label: 'For 50 people', value: 'for_50people' },
                     ]}
-                    value={selectedOption3}
-                    onChange={handleOptionChange3}
+                    value={typeFilter}
+                    onChange={(event) => onOptionChange('type', event)}
                 />
             </nav>
-            <button className="button_apply">Apply</button>
+            <button className="button_apply" onClick={onApplyFilters}>Apply</button>
+            <button className="button_cancel" onClick={onCancelFilters}>Cancel</button>
         </div>
     );
 }

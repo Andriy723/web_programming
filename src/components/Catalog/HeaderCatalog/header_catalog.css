@@ -1,12 +1,53 @@
 .header_catalog {
     padding-bottom: 15px;
     border-bottom: 1px solid #000000;
+    font-family: Gilroy-Regular;
 }
 
 .button_search {
-    margin-left: 1142px;
+    margin-left: 1062px;
     position: absolute;
     text-align:center;
+}
+
+.clear_search_btn {
+    position: absolute;
+    border-radius: 13px;
+    margin-left: 1270px;
+    width: 60px;
+    height: 34px;
+    background: #FF4742;
+    border: 2px solid #FF4742;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.clear_search_btn {
+
+}
+
+.clear_search_btn:hover,
+.clear_search_btn:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FF4742;
+}
+
+.clear_search_btn:active {
+    opacity: .5;
 }
 
 .search_btn {
