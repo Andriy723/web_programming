@@ -1,0 +1,55 @@
+.bottom {
+    margin-bottom: 20px;
+    border-top: 1px solid #000000;
+    font-family: "Gilroy-Regular";
+    padding-top: 10px;
+}
+
+.bottom__nav {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.header_bottom {
+    align-items: center;
+    margin-left: 80px;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.paragraph_bottom {
+    width: 260px;
+    margin-left: 80px;
+    font-size: 16px;
+    margin-top: 1px;
+}
+
+.logo_bottom {
+    margin-left: 380px;
+    animation: 4s 1s 1 going1;
+}
+
+.logos_bottom {
+    padding-left: 400px;
+}
+
+.logos_bottom img {
+    padding-left: 15px;
+    animation: none;
+}
+
+@keyframes going1 {
+    0% {
+        margin-left: 250px;
+    }
+    30% {
+        margin-left: 0;
+    }
+    70%{
+        margin-left: 460px;
+    }
+    100%{
+        margin-left: 380px;
+    }
+}

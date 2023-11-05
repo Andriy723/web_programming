@@ -128,13 +128,14 @@
     position: relative;
     z-index: 0;
     border-radius: 30px;
-    font-size: 20px;
+    font-size: 21px;
     ser-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
     margin: 0 60px 0 0;
-    width: 150px;
-    height: 57px;
+    width: 140px;
+    height: 55px;
+    text-align: center;
 }
 
 @keyframes going {
