@@ -18,3 +18,7 @@
 .product-list img:hover {
     opacity: .8;
 }
+
+.view_more_button {
+    margin-bottom: 150px;
+}

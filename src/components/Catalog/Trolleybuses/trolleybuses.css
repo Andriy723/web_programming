@@ -1,29 +1,32 @@
 .trolleybuses {
     margin-top: 80px;
     display: block;
-    margin-right: 39px;
+    margin-right: 45px;
     width: 323px;
     text-align: center;
-    border: 2px solid black;
+    border: 2px solid #a99720;
     border-radius: 20px;
     font-family: Gilroy-Regular;
 }
 
 .trolleybuses_info {
-    padding-left: 9px;
+    padding-left: 19px;
     height: 250px;
+    text-align: start;
 }
 
 .trolleybuses img {
-    border: 2px solid #000000;
+    border: 2px solid #a99720;
 }
 
 .trolleybuses_info p {
     font-size: 22px;
+    text-align: start;
 }
 
 .trolleybuses_info h2 {
     font-size: 29px;
+    text-align: start;
     height: 50px;
 }
 
@@ -37,13 +40,13 @@
     width: 180px;
     border-radius: 9px;
     background: white;
-    border: 2px solid black;
+    border: 2px solid #a99720;
     align-items: center;
     box-sizing: border-box;
-    color: #000;
+    color: #a99720;
     cursor: pointer;
     display: inline-flex;
-    fill: #000;
+    fill: #a99720;
     font-family: Gilroy-Regular;
     font-size: 20px;
     font-weight: 600;
