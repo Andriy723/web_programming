@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Trolleybuses_item from "./TrolleybusItem/trolleybus_item";
+import TrolleybusesItem from "./TrolleybusItem/trolleybus_item";
 import Header from "./Header/header";
 import MainPart from "./MainPart/main_part";
 import PhotosPart from "./PhotosPart/photos_part";
@@ -93,7 +93,7 @@ function Home() {
             <div>
                 <div className="product-list">
                     {trolleybusesItemList.map((trolleybuses) => (
-                        <Trolleybuses_item key={trolleybuses.id} product={trolleybuses} />
+                        <TrolleybusesItem key={trolleybuses.id} product={trolleybuses} />
                     ))}
                 </div>
                 {showMore ? (

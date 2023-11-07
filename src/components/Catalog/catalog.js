@@ -15,7 +15,7 @@ function Catalog() {
         { id: 6, title: '20-HGFff', description: 'arggr', price: 67, type: 'for_30people' },
     ]);
 
-    const [filters, setFilters] = useState({
+    const [ setFilters] = useState({
         price: 'all',
         title: 'all',
         type: 'all',
@@ -77,9 +77,6 @@ function Catalog() {
         });
         setSearchText('');
     };
-
-
-    const isAnyFilterApplied = priceFilter !== 'all' || titleFilter !== 'all' || typeFilter !== 'all';
 
     const applyFilters = (searchText) => {
         return trolleybusesItemList.filter((trolleybus) => {

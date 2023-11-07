@@ -1,7 +1,11 @@
 import React from 'react';
 import Select from '../../Buttons/select';
 
-function FilterCatalog({ onOptionChange, onApplyFilters, priceFilter, titleFilter, typeFilter, onCancelFilters }) {
+function FilterCatalog({ onOptionChange, onApplyFilters, priceFilter, titleFilter, typeFilter, onCancelFilters, onClearFilters }) {
+    const handleApplyClick = () => {
+        onApplyFilters();
+    };
+
     return (
         <div className="filter_catalog">
             <nav className="header_catalog__nav1">
@@ -40,7 +44,7 @@ function FilterCatalog({ onOptionChange, onApplyFilters, priceFilter, titleFilte
                     onChange={(event) => onOptionChange('type', event)}
                 />
             </nav>
-            <button className="button_apply" onClick={onApplyFilters}>Apply</button>
+            <button className="button_apply" onClick={handleApplyClick}>Apply</button>
             <button className="button_cancel" onClick={onCancelFilters}>Cancel</button>
         </div>
     );
