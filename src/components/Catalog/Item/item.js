@@ -1,16 +1,30 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link, useParams } from 'react-router-dom';
 import HeaderCatalog from "../HeaderCatalog/header_catalog";
 import Bottom from "../../Home/Bottom/bottom";
 import Footer from "../../Home/Footer/footer";
+import axios from "axios";
 
 function ItemPage({ trolleybusesItemList }) {
     const { id } = useParams();
     const itemId = parseInt(id);
-    const selectedTrolleybus = trolleybusesItemList.find(trolleybus => trolleybus.id === itemId);
+    const [selectedTrolleybus, setSelectedTrolleybus] = useState(null);
+
+    useEffect(() => {
+        const fetchTrolleybusById = async () => {
+            try {
+                const response = await axios.get(`http://localhost:8080/trolleybuses/${itemId}`);
+                setSelectedTrolleybus(response.data);
+            } catch (error) {
+                console.error('Error fetching trolleybus data:', error);
+            }
+        };
+
+        fetchTrolleybusById();
+    }, [itemId]);
 
     if (!selectedTrolleybus) {
-        return <div>Error</div>;
+        return <div>Loading...</div>;
     }
 
     return (

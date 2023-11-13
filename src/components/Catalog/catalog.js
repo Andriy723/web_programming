@@ -1,21 +1,25 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import Trolleybuses from "./Trolleybuses/trolleybuses";
 import HeaderCatalog from "./HeaderCatalog/header_catalog";
 import FilterCatalog from "./FilterCatalog/filter_catalog";
 import BottomCatalog from "./BottomCatalog/bottom_catalog";
 import Footer from "../Home/Footer/footer";
+import Loader from "../Loader/loader";
+import axios from "axios";
 
 function Catalog() {
-    const [trolleybusesItemList] = useState([
-        { id: 1, img: <img src="/icons/big_trolleybus.png" alt="photo1" width="370" height="220" />, title: 'TRHD-533', description: 'hrrehre', price: 10.00, type: 'for_50people' },
-        { id: 2, title: 'GYUJNE-222', description: 'hetfd', price: 8, type: 'for_70people' },
-        { id: 3, title: '76DJHG', description: 'kinjte', price: 2, type: 'for_30people' },
-        { id: 4, title: 'GYEBGEY', description: 'rfvghuytrdhjytfd', price: 45, type: 'for_70people' },
-        { id: 5, title: 'GVWUU DHU', description: 'kikuytffgytrfdfghytrfrdrgtr', price: 55, type: 'for_50people' },
-        { id: 6, title: '20-HGFff', description: 'arggr', price: 67, type: 'for_30people' },
+    const [trolleybusesItemList, setTrolleybusesItemList] = useState([
+        // { id: 1, img: <img src="/icons/big_trolleybus.png" alt="photo1" width="370" height="220" />, title: 'TRHD-533', description: 'hrrehre', price: 10.00, type: 'for_50people' },
+        // { id: 2, title: 'GYUJNE-222', description: 'hetfd', price: 8, type: 'for_70people' },
+        // { id: 3, title: '76DJHG', description: 'kinjte', price: 2, type: 'for_30people' },
+        // { id: 4, title: 'GYEBGEY', description: 'rfvghuytrdhjytfd', price: 45, type: 'for_70people' },
+        // { id: 5, title: 'GVWUU DHU', description: 'kikuytffgytrfdfghytrfrdrgtr', price: 55, type: 'for_50people' },
+        // { id: 6, title: '20-HGFff', description: 'arggr', price: 67, type: 'for_30people' },
     ]);
 
-    const [ setFilters] = useState({
+    const [loading, setLoading] = useState(true);
+
+    const [filters, setFilters] = useState({
         price: 'all',
         title: 'all',
         type: 'all',
@@ -36,14 +40,23 @@ function Catalog() {
     };
 
     const handleCancelFilters = () => {
-        setPriceFilter('all');
-        setTitleFilter('all');
-        setTypeFilter('all');
+        setFilters({
+            price: 'all',
+            title: 'all',
+            type: 'all',
+        });
+        setSearchText('');
         setAppliedFilters({
             price: 'all',
             title: 'all',
             type: 'all',
         });
+
+        setPriceFilter('all');
+        setTitleFilter('all');
+        setTypeFilter('all');
+
+        fetchTrolleybuses();
     };
 
     const [priceFilter, setPriceFilter] = useState('all');
@@ -109,6 +122,37 @@ function Catalog() {
         });
     };
 
+    useEffect(() => {
+        const fetchTrolleybuses = async () => {
+            try {
+                setLoading(true); // Set loading to true before making the request
+                const response = await axios.get('http://localhost:8080/trolleybuses');
+                setTrolleybusesItemList(response.data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            } finally {
+                setLoading(false); // Set loading to false after the request completes
+            }
+        };
+
+        fetchTrolleybuses();
+    }, [appliedFilters]);
+
+    const fetchTrolleybuses = async () => {
+        try {
+            const response = await axios.get('http://localhost:8080/trolleybuses', {
+                params: {
+                    price: appliedFilters.price,
+                    title: appliedFilters.title,
+                    type: appliedFilters.type,
+                },
+            });
+            setTrolleybusesItemList(response.data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
     const filteredTrolleybuses = applyFilters(searchText);
 
     return (
@@ -127,11 +171,15 @@ function Catalog() {
                 titleFilter={titleFilter}
                 typeFilter={typeFilter}
             />
-            <div className="product-list">
-                {filteredTrolleybuses.map((trolleybus) => (
-                    <Trolleybuses key={trolleybus.id} product={trolleybus} />
-                ))}
-            </div>
+            {loading ? (
+                <Loader />
+            ) : (
+                <div className="product-list">
+                    {filteredTrolleybuses.map((trolleybus) => (
+                        <Trolleybuses key={trolleybus.id} product={trolleybus} />
+                    ))}
+                </div>
+            )}
             <BottomCatalog />
             <Footer />
         </div>

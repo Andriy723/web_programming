@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from '../../Buttons/select';
 
-function FilterCatalog({ onOptionChange, onApplyFilters, priceFilter, titleFilter, typeFilter, onCancelFilters, onClearFilters }) {
+function FilterCatalog({ onOptionChange, onApplyFilters, priceFilter, titleFilter, typeFilter, onCancelFilters }) {
     const handleApplyClick = () => {
         onApplyFilters();
     };
