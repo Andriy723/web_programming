@@ -27,5 +27,5 @@
 Посилання на вітку [тут](https://github.com/Andriy723/web_programming/tree/Lab8_item_page)
 
 ***
-### Лабораторна робота №8 (Варіант 20)
+### Лабораторна робота №9 (Варіант 20)
 Посилання на вітку [тут](https://github.com/Andriy723/web_programming/tree/Lab9_rest_api)
