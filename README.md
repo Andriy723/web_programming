@@ -14,5 +14,18 @@
 Тут буде 3, 4 та 5 лаби
 Посилання на вітку [тут](https://github.com/Andriy723/web_programming/tree/Lab_3_4_5)
 
+***
+### Лабораторна робота №6 (Варіант 20)
+Посилання на вітку [тут](https://github.com/Andriy723/web_programming/tree/Lab6_home_page_react)
 
 ***
+### Лабораторна робота №7 (Варіант 20)
+Посилання на вітку [тут](https://github.com/Andriy723/web_programming/tree/Lab7_catalog_page)
+
+***
+### Лабораторна робота №8 (Варіант 20)
+Посилання на вітку [тут](https://github.com/Andriy723/web_programming/tree/Lab8_item_page)
+
+***
+### Лабораторна робота №8 (Варіант 20)
+Посилання на вітку [тут](https://github.com/Andriy723/web_programming/tree/Lab9_rest_api)
