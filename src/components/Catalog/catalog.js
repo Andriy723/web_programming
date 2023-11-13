@@ -125,18 +125,23 @@ function Catalog() {
     useEffect(() => {
         const fetchTrolleybuses = async () => {
             try {
-                setLoading(true); // Set loading to true before making the request
+                setLoading(true);
                 const response = await axios.get('http://localhost:8080/trolleybuses');
                 setTrolleybusesItemList(response.data);
+                saveToLocalStorage(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
             } finally {
-                setLoading(false); // Set loading to false after the request completes
+                setLoading(false);
             }
         };
 
         fetchTrolleybuses();
     }, [appliedFilters]);
+
+    const saveToLocalStorage = (data) => {
+        localStorage.setItem("trolleybusesData", JSON.stringify(data));
+    };
 
     const fetchTrolleybuses = async () => {
         try {
