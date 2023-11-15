@@ -1,0 +1,86 @@
+.trolleybuses {
+    margin-top: 80px;
+    display: block;
+    margin-right: 45px;
+    width: 323px;
+    text-align: center;
+    border: 2px solid #2f762a;
+    border-radius: 20px;
+    font-family: Gilroy-Regular;
+}
+
+.trolleybuses_info {
+    padding-left: 19px;
+    height: 250px;
+    text-align: start;
+}
+
+.trolleybuses img {
+    border: 2px solid #2f762a;
+}
+
+.trolleybuses_info p {
+    font-size: 22px;
+    text-align: start;
+}
+
+.trolleybuses_info h2 {
+    font-size: 29px;
+    text-align: start;
+    height: 50px;
+}
+
+.btn_view_more {
+    border-radius: 20px;
+    background: white;
+    padding: 10px;
+}
+
+.btn_view_more {
+    width: 180px;
+    border-radius: 9px;
+    background: white;
+    border: 2px solid #25a513;
+    align-items: center;
+    box-sizing: border-box;
+    color: #25a513;
+    cursor: pointer;
+    display: inline-flex;
+    fill: #25a513;
+    font-family: Gilroy-Regular;
+    font-size: 20px;
+    font-weight: 600;
+    height: 48px;
+    justify-content: center;
+    letter-spacing: -.8px;
+    line-height: 24px;
+    min-width: 140px;
+    outline: 0;
+    padding: 0 17px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.btn_view_more:focus {
+    color: #171e29;
+}
+
+.btn_view_more:hover {
+    border-color: #5805a0;
+    color: #5805a0;
+    fill: #5805a0;
+}
+
+.btn_view_more:active {
+    border-color: #5805a0;
+    color: #5805a0;
+    fill: #5805a0;
+}
+
+.trolleybus_btn {
+    height: 60px;
+}
