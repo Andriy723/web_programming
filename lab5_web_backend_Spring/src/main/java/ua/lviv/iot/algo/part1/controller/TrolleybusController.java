@@ -48,6 +48,7 @@ public class TrolleybusController {
                     .giveTrolleybus(trolleybusId)));
         }
     }
+
     @PostMapping
     public ResponseEntity createTrolleybus(
             final @RequestBody TrolleybusDTO trolleybus) {

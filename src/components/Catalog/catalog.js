@@ -5,7 +5,7 @@ import FilterCatalog from "./FilterCatalog/filter_catalog";
 import BottomCatalog from "./BottomCatalog/bottom_catalog";
 import Footer from "../Home/Footer/footer";
 import Loader from "../Loader/loader";
-import axios from "axios";
+import {fetchTrolleybusesApi} from "./api";
 
 function Catalog() {
     const [trolleybusesItemList, setTrolleybusesItemList] = useState([
@@ -56,7 +56,7 @@ function Catalog() {
         setTitleFilter('all');
         setTypeFilter('all');
 
-        fetchTrolleybuses();
+        fetchTrolleybusesApi();
     };
 
     const [priceFilter, setPriceFilter] = useState('all');
@@ -126,11 +126,8 @@ function Catalog() {
         const fetchTrolleybuses = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get('http://localhost:8080/trolleybuses');
-                setTrolleybusesItemList(response.data);
-                saveToLocalStorage(response.data);
-            } catch (error) {
-                console.error('Error fetching data:', error);
+                const data = await fetchTrolleybusesApi(appliedFilters);
+                setTrolleybusesItemList(data);
             } finally {
                 setLoading(false);
             }
@@ -138,25 +135,6 @@ function Catalog() {
 
         fetchTrolleybuses();
     }, [appliedFilters]);
-
-    const saveToLocalStorage = (data) => {
-        localStorage.setItem("trolleybusesData", JSON.stringify(data));
-    };
-
-    const fetchTrolleybuses = async () => {
-        try {
-            const response = await axios.get('http://localhost:8080/trolleybuses', {
-                params: {
-                    price: appliedFilters.price,
-                    title: appliedFilters.title,
-                    type: appliedFilters.type,
-                },
-            });
-            setTrolleybusesItemList(response.data);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    };
 
     const filteredTrolleybuses = applyFilters(searchText);
 
