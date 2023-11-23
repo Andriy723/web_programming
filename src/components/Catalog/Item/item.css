@@ -141,13 +141,61 @@
 .colour_select h3 {
     font-size: 17px;
     margin-bottom: 3px;
+    margin-left: -83px;
 }
 
 .select_colour {
-    border-radius: 6px;
     margin-top: 8px;
     border: 2px solid black;
-    padding:  5px 73px 5px 10px;
+    background: black;
+    color: white;
+    box-shadow: 0 0 5px rgba(85, 85, 85, 0.7);
+    appearance: none;
+    cursor: pointer;
+    width: 145px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.select_container {
+    position: relative;
+    display: inline-block;
+}
+
+.select_arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.select_colour {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.select_colour option {
+    background-color: white;
+    color: black;
+}
+
+.select_colour:hover {
+    background: #333;
+}
+
+.select_colour:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
 .price_type_back_cart {
@@ -165,7 +213,7 @@
 .back_catalog_button {
     appearance: none;
     background-color: #f11010;
-    border: 2px solid #ffffff;
+    border: 2px solid #e60d0d;
     border-radius: 15px;
     box-sizing: border-box;
     cursor: pointer;
@@ -205,7 +253,7 @@
 .to_cart_button {
     appearance: none;
     background-color: #29e005;
-    border: 2px solid #ffffff;
+    border: 2px solid #29e005;
     border-radius: 15px;
     box-sizing: border-box;
     cursor: pointer;

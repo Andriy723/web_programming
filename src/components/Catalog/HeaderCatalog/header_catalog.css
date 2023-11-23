@@ -18,7 +18,6 @@
     height: 34px;
     background: #FF4742;
     border: 2px solid #FF4742;
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
     box-sizing: border-box;
     color: #FFFFFF;
     cursor: pointer;
@@ -33,10 +32,12 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     vertical-align: middle;
-}
-
-.clear_search_btn {
-
+    box-shadow:
+            rgba(0, 0, 0, 0.07) 0px 1px 1px,
+            rgba(0, 0, 0, 0.07) 0px 2px 2px,
+            rgba(0, 0, 0, 0.07) 0px 4px 4px,
+            rgba(0, 0, 0, 0.07) 0px 8px 8px,
+            rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 
 .clear_search_btn:hover,
@@ -44,6 +45,8 @@
     background-color: initial;
     background-position: 0 0;
     color: #FF4742;
+    box-shadow: rgb(155, 29, 29) 0px 3px 6px,
+    rgb(243, 5, 5) 0px 2px 4px;
 }
 
 .clear_search_btn:active {
@@ -80,6 +83,12 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    box-shadow:
+            rgba(0, 0, 0, 0.07) 0px 1px 1px,
+            rgba(0, 0, 0, 0.07) 0px 2px 2px,
+            rgba(0, 0, 0, 0.07) 0px 4px 4px,
+            rgba(0, 0, 0, 0.07) 0px 8px 8px,
+            rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 
 .search_btn:focus {
@@ -90,12 +99,17 @@
     border-color: #06f;
     color: #06f;
     fill: #06f;
+    box-shadow: rgb(0, 35, 132) 0px 4px 9px,
+    rgb(0, 85, 250) 0px 2px 4px;
 }
 
 .search_btn:active {
     border-color: #06f;
     color: #06f;
     fill: #06f;
+    box-shadow: 0 0 3px #0066FFFF,
+    0 0 8px #0066FFFF,
+    0 0 13px #0066FFFF;
 }
 
 .a {
@@ -180,15 +194,15 @@
     content: "";
     background: linear-gradient(
             55deg,
-            #ff0000,
-            #ff7300,
-            #fffb00,
-            #48ff00,
-            #00ffd5,
-            #002bff,
-            #7a00ff,
-            #ff00c8,
-            #ff0000
+            #10ff1b,
+            #29e005,
+            #99ff86,
+            #5aeff3,
+            #0da47c,
+            #00ff50,
+            #73e16e,
+            #33f1ad,
+            #00ff77
     );
     position: absolute;
     top: -2px;
@@ -267,17 +281,41 @@
 @keyframes going0 {
     0% {
         margin-left: 300px;
+        filter: drop-shadow(23px 5px 6px rgba(55, 48, 48, 0.49));
     }
     20% {
         margin-left: 20px;
+        filter: drop-shadow(56px 5px 6px rgba(55, 48, 48, 0.38));
     }
     40%{
         margin-left: -250px;
+        filter: drop-shadow(33px 5px 6px rgba(55, 48, 48, 0.29));
     }
     60%{
         margin-left: 150px;
+        filter: drop-shadow(7px 5px 6px rgba(55, 48, 48, 0.29));
     }
     100%{
         margin-left: 0;
+        filter: drop-shadow(1px 5px 6px rgba(55, 48, 48, 0.08));
+    }
+}
+
+@keyframes going {
+    0% {
+        margin-left: 290px;
+        filter: drop-shadow(23px 5px 6px rgba(55, 48, 48, 0.49));
+    }
+    30% {
+        margin-left: -290px;
+        filter: drop-shadow(56px 5px 6px rgba(55, 48, 48, 0.38));
+    }
+    80%{
+        margin-left: 70px;
+        filter: drop-shadow(3px 5px 6px rgba(55, 48, 48, 0.29));
+    }
+    100%{
+        margin-left: 0;
+        filter: drop-shadow(1px 5px 6px rgba(55, 48, 48, 0.08));
     }
 }

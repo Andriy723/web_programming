@@ -22,10 +22,10 @@ function HeaderCatalog({ onSearchChange, onClearSearch }) {
                         <img src="/icons/trolleybus-icon.png" alt="header_catalog_logo" width="80" height="80" />
                     </div>
                     <div className="header_catalog__nav-buttons">
-                        <a href="http://localhost:3000/Home">
+                        <a href="http://localhost:3000/">
                             <h2>
                             <button type="button" className="header_catalog__category">
-                            <a href="http://localhost:3000/Home">Home</a>
+                            <a href="http://localhost:3000/">Home</a>
                             </button>
                             </h2>
                         </a>

@@ -8,8 +8,11 @@
 }
 
 .product-list img {
-    aspect-ratio: 1;
-    border-radius: 20px;
+    aspect-ratio: 2;
+    -moz-border-radius-topleft: 20px;
+    -moz-border-radius-topright: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     opacity: 1;
     transition: .5s;
     cursor: pointer;

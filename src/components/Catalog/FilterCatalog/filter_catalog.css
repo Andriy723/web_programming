@@ -8,27 +8,33 @@
 }
 
 .header_catalog__nav1, .header_catalog__nav2, .header_catalog__nav3 {
-    padding-left: 65px;
+    padding-left: 60px;
 }
 
 .header_catalog__nav1 select, .header_catalog__nav2 select, .header_catalog__nav3 select {
-    border: 2px solid black;
+    border: 2px solid rgba(0, 0, 0, 0.49);
     border-radius: 9px;
-    width: 140px;
+    width: 145px;
     height: 35px;
+    box-shadow:
+    rgba(0, 0, 0, 0.07) 0px 1px 1px,
+    rgba(0, 0, 0, 0.07) 0px 2px 2px,
+    rgba(0, 0, 0, 0.07) 0px 4px 4px,
+    rgba(0, 0, 0, 0.07) 0px 8px 8px,
+    rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 
 .button_apply {
     border-radius: 15px;
     margin-left: 550px;
     background: white;
-    border: 2px solid black;
+    border: 2px solid rgba(37, 128, 54, 0.7);
     align-items: center;
     box-sizing: border-box;
-    color: #000;
+    color: rgba(37, 128, 54, 0.7);
     cursor: pointer;
     display: inline-flex;
-    fill: #000;
+    fill: rgba(37, 128, 54, 0.07);
     font-family: Gilroy-Regular;
     font-size: 16px;
     font-weight: 600;
@@ -45,35 +51,47 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    box-shadow:
+            rgba(0, 0, 0, 0.07) 0px 1px 1px,
+            rgba(0, 0, 0, 0.07) 0px 2px 2px,
+            rgba(0, 0, 0, 0.07) 0px 4px 4px,
+            rgba(0, 0, 0, 0.07) 0px 8px 8px,
+            rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 
 .button_apply:focus {
-    color: #171e29;
+    color: rgba(37, 128, 54, 0.7);
 }
 
 .button_apply:hover {
-    border-color: #56d33a;
-    color: #56d33a;
-    fill: #56D33AFF;
+    border-color: #42c124;
+    color: #42C124FF;
+    fill: #42C124FF;
+    box-shadow: rgb(30, 77, 32) 0px 4px 9px,
+    rgb(41, 224, 5) 0px 2px 4px;
 }
 
+
 .button_apply:active {
-    border-color: #56d33a;
-    color: #56d33a;
-    fill: #56D33AFF;
+    border-color: #42C124FF;
+    color: #42C124FF;
+    fill: #42C124FF;
+    box-shadow: 0 0 3px #44a22d,
+    0 0 8px #44A22DFF,
+    0 0 13px #44A22DFF;
 }
 
 .button_cancel {
     border-radius: 15px;
     margin-left: 10px;
     background: white;
-    border: 2px solid black;
+    border: 2px solid rgba(199, 24, 24, 0.7);
     align-items: center;
     box-sizing: border-box;
-    color: #000;
+    color: rgba(199, 24, 24, 0.7);
     cursor: pointer;
     display: inline-flex;
-    fill: #000;
+    fill: rgba(199, 24, 24, 0.7);
     font-family: Gilroy-Regular;
     font-size: 16px;
     font-weight: 600;
@@ -90,20 +108,31 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    box-shadow:
+            rgba(0, 0, 0, 0.07) 0px 1px 1px,
+            rgba(0, 0, 0, 0.07) 0px 2px 2px,
+            rgba(0, 0, 0, 0.07) 0px 4px 4px,
+            rgba(0, 0, 0, 0.07) 0px 8px 8px,
+            rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 
 .button_cancel:focus {
-    color: #171e29;
+    color: #e60d0d;
 }
 
 .button_cancel:hover {
-    border-color: #e60d0d;
-    color: #e60d0d;
-    fill: #e60d0d;
+    border-color: #ff0000;
+    color: #ff0000;
+    fill: #ff0000;
+    box-shadow: rgb(130, 32, 32) 0px 4px 9px,
+    rgb(230, 13, 13) 0px 2px 4px;
 }
 
 .button_cancel:active {
-    border-color: #e60d0d;
-    color: #e60d0d;
-    fill: #e60d0d;
+    border-color: #ff0000;
+    color: #ff0000;
+    fill: #ff0000;
+    box-shadow: 0 0 3px #FF0000FF,
+    0 0 8px #FF0000FF,
+    0 0 13px #FF0000FF;
 }

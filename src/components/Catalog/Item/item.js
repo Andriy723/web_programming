@@ -1,23 +1,23 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import HeaderCatalog from "../HeaderCatalog/header_catalog";
 import Bottom from "../../Home/Bottom/bottom";
 import Footer from "../../Home/Footer/footer";
-import axios from "axios";
+import { fetchTrolleybusByIdApi } from "../api";
+import {useDispatch} from "react-redux";
+import {addToCart} from "../../Cart/Redux/actions";
 
-function ItemPage({ trolleybusesItemList }) {
+function ItemPage() {
+    const dispatch = useDispatch();
+
     const { id } = useParams();
     const itemId = parseInt(id);
     const [selectedTrolleybus, setSelectedTrolleybus] = useState(null);
 
     useEffect(() => {
         const fetchTrolleybusById = async () => {
-            try {
-                const response = await axios.get(`http://localhost:8080/trolleybuses/${itemId}`);
-                setSelectedTrolleybus(response.data);
-            } catch (error) {
-                console.error('Error fetching trolleybus data:', error);
-            }
+            const data = await fetchTrolleybusByIdApi(itemId);
+            setSelectedTrolleybus(data);
         };
 
         fetchTrolleybusById();
@@ -27,6 +27,10 @@ function ItemPage({ trolleybusesItemList }) {
         return <div>Loading...</div>;
     }
 
+    const handleAddToCart = () => {
+        dispatch(addToCart(selectedTrolleybus));
+    };
+
     return (
         <div>
             <HeaderCatalog />
@@ -34,8 +38,8 @@ function ItemPage({ trolleybusesItemList }) {
                 <img src="/icons/trolleybus_photo.png" alt="Trolleybus" width="370" height="220" />
                 <div className="buttons_title_desc">
                     <div className="buttons_charac_1_2">
-                        <a href=""><button type="button" className="charact_button1">1 characteristic</button></a>
-                        <a href=""><button type="button" className="charact_button2">2 characteristic</button></a>
+                        <Link to=""><button type="button" className="charact_button1">1 characteristic</button></Link>
+                        <Link to=""><button type="button" className="charact_button2">2 characteristic</button></Link>
                     </div>
                     <div className="title_desc">
                         <h2>{selectedTrolleybus.title}</h2>
@@ -49,16 +53,17 @@ function ItemPage({ trolleybusesItemList }) {
                         <div className="colour_select">
                             <h3>Colour:</h3>
                             <select className="select_colour">
-                                <option value="colour_black" style={{ backgroundColor: 'black', color: 'white'}}>Black</option>
-                                <option value="colour_red" style={{ backgroundColor: 'red', color: 'white' }}>Red</option>
-                                <option value="colour_green" style={{ backgroundColor: 'green', color: 'white' }}>Green</option>
-                                <option value="colour_blue" style={{ backgroundColor: 'blue', color: 'white' }}>Blue</option>
-                                <option value="colour_white" style={{ backgroundColor: 'white', color: 'black' }}>White</option>
+                                <option value="colour_black">Black</option>
+                                <option value="colour_red">Red</option>
+                                <option value="colour_green">Green</option>
+                                <option value="colour_blue">Blue</option>
+                                <option value="colour_white">White</option>
                             </select>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div className="price_type_back_cart">
                 <div className="price_type">
                     <h2>Price: ${selectedTrolleybus.price}</h2>
@@ -66,7 +71,11 @@ function ItemPage({ trolleybusesItemList }) {
                 </div>
                 <div className="back_and_cart">
                     <Link to="/Catalog"><button className="back_catalog_button">Back to Catalog</button></Link>
-                    <a href=""><button className="to_cart_button">Add to cart</button></a>
+                    <Link to="/Cart">
+                        <button className="to_cart_button" onClick={handleAddToCart}>
+                            Add to cart
+                        </button>
+                    </Link>
                 </div>
             </div>
             <Bottom/>

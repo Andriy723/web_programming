@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Trolleybuses({ product }) {
     return (
         <div className="trolleybuses">
-            <img src="/icons/trolleybus_photo.png" alt="img_object" width="321px" height="180px" />
+            <img src="/icons/trolleybus_photo.png" alt="img_object" width="320px" height="180px" />
             <div className="trolleybuses_info">
                 <h2>Title: {product.title}</h2>
                 <p>Description: {product.description}</p>

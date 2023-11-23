@@ -1,4 +1,4 @@
-function Header() {
+function HeaderCart() {
     return (
         <header>
             <div className="header">
@@ -8,16 +8,16 @@ function Header() {
                     </div>
                     <div className="header__nav-buttons">
                         <a href="http://localhost:3000/">
-                            <h2><button type="button" className="header__category1">
-                            <a href="http://localhost:3000/">Home</a></button></h2>
+                            <h2><button type="button" className="header__category">
+                                <a href="http://localhost:3000/">Home</a></button></h2>
                         </a>
                         <a href="http://localhost:3000/Catalog">
                             <h2><button type="button" className="header__category">
-                            <a href="http://localhost:3000/Catalog">Catalog</a></button></h2>
+                                <a href="http://localhost:3000/Catalog">Catalog</a></button></h2>
                         </a>
                         <a href="http://localhost:3000/Cart">
-                            <h2><button type="button" className="header__category">
-                            <a href="http://localhost:3000/Cart">Cart</a></button></h2>
+                            <h2><button type="button" className="header__category1">
+                                <a href="http://localhost:3000/Cart">Cart</a></button></h2>
                         </a>
                     </div>
                 </nav>
@@ -26,4 +26,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default HeaderCart;
