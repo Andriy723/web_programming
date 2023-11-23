@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 
 import java.util.LinkedList;
 import java.util.List;
+
 @CrossOrigin(origins = "*")
 @RequestMapping("/trolleybuses")
 @RestController
@@ -30,9 +31,13 @@ public class TrolleybusController {
             .status(HttpStatusCode.valueOf(404)).build();
 
     @GetMapping
-    public ResponseEntity getAllTrolleybuses() {
+    public ResponseEntity getAllTrolleybuses(
+            @RequestParam(name = "price", defaultValue = "all") String price,
+            @RequestParam(name = "title", defaultValue = "all") String title,
+            @RequestParam(name = "type", defaultValue = "all") String type,
+            @RequestParam(name = "searchText", defaultValue = "") String searchText) {
         List<TrolleybusDTO> response = new LinkedList<>();
-        for (Trolleybus trolleybus : trolleybusService.giveAll()) {
+        for (Trolleybus trolleybus : trolleybusService.giveAllWithFilters(price, title, type, searchText)) {
             response.add(trolleybusMapper.map(trolleybus));
         }
         return ResponseEntity.ok(response);
@@ -52,7 +57,7 @@ public class TrolleybusController {
     @PostMapping
     public ResponseEntity createTrolleybus(
             final @RequestBody TrolleybusDTO trolleybus) {
-         ResponseEntity.ok(trolleybusMapper.map(
+        ResponseEntity.ok(trolleybusMapper.map(
                 trolleybusService.addTrolleybus(
                         trolleybusMapper.map(trolleybus))));
         List<TrolleybusDTO> response = new LinkedList<>();
@@ -69,8 +74,8 @@ public class TrolleybusController {
         if (!trolleybusService.hasTrolleybusWith(trolleybus)) {
             return FAILURE;
         } else {
-           return ResponseEntity.ok(trolleybusMapper.map(
-                   trolleybusService.deleteTrolleybus(trolleybus)));
+            return ResponseEntity.ok(trolleybusMapper.map(
+                    trolleybusService.deleteTrolleybus(trolleybus)));
         }
     }
 
