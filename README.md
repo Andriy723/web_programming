@@ -29,3 +29,7 @@
 ***
 ### Лабораторна робота №9 (Варіант 20)
 Посилання на вітку [тут](https://github.com/Andriy723/web_programming/tree/Lab9_rest_api)
+
+***
+### Лабораторна робота №10 (Варіант 20)
+Посилання на вітку [тут](https://github.com/Andriy723/web_programming/tree/Lab10_cart_page)
