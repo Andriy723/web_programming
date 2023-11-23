@@ -77,4 +77,5 @@ public class TrolleybusService {
                                 (type.equals("all") || trolleybus.getType().equals(type)))
                 .collect(Collectors.toList());
     }
+
 }

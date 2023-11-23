@@ -35,13 +35,24 @@ public class TrolleybusController {
             @RequestParam(name = "price", defaultValue = "all") String price,
             @RequestParam(name = "title", defaultValue = "all") String title,
             @RequestParam(name = "type", defaultValue = "all") String type,
-            @RequestParam(name = "searchText", defaultValue = "") String searchText) {
+            @RequestParam(name = "searchText", defaultValue = "") String searchText)
+    {
         List<TrolleybusDTO> response = new LinkedList<>();
         for (Trolleybus trolleybus : trolleybusService.giveAllWithFilters(price, title, type, searchText)) {
             response.add(trolleybusMapper.map(trolleybus));
         }
         return ResponseEntity.ok(response);
     }
+
+
+//    @GetMapping
+//    public ResponseEntity getAllTrolleybuses() {
+//        List<TrolleybusDTO> response = new LinkedList<>();
+//        for (Trolleybus trolleybus : trolleybusService.giveAll()) {
+//            response.add(trolleybusMapper.map(trolleybus));
+//        }
+//        return ResponseEntity.ok(response);
+//    }
 
     @GetMapping(path = "/{id}")
     public ResponseEntity getTrolleybus(

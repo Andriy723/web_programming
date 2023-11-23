@@ -6,6 +6,7 @@ import BottomCatalog from "./BottomCatalog/bottom_catalog";
 import Footer from "../Home/Footer/footer";
 import Loader from "../Loader/loader";
 import {fetchTrolleybusesApi} from "./api";
+import {eventWrapper} from "@testing-library/user-event/dist/utils";
 
 function Catalog() {
     const [trolleybusesItemList, setTrolleybusesItemList] = useState([]);
@@ -23,15 +24,6 @@ function Catalog() {
         title: 'all',
         type: 'all',
     });
-
-    const handleApplyFilters = () => {
-        setAppliedFilters({
-            price: priceFilter,
-            title: titleFilter,
-            type: typeFilter,
-        });
-        fetchTrolleybusesApi(appliedFilters);
-    };
 
     const handleCancelFilters = () => {
         setFilters({
@@ -115,11 +107,25 @@ function Catalog() {
         });
     };
 
+    const handleApplyFilters = () => {
+        fetchTrolleybusesApi({
+            price: priceFilter,
+            title: titleFilter,
+            type: typeFilter,
+            searchText: searchText,
+        }).then(data => setTrolleybusesItemList(data));
+    };
+
     useEffect(() => {
         const fetchTrolleybuses = async () => {
             try {
                 setLoading(true);
-                const data = await fetchTrolleybusesApi(filters);
+                const data = await fetchTrolleybusesApi({
+                    price: filters.price,
+                    title: filters.title,
+                    type: filters.type,
+                    searchText: searchText,
+                });
                 setTrolleybusesItemList(data);
             } finally {
                 setLoading(false);
@@ -127,7 +133,8 @@ function Catalog() {
         };
 
         fetchTrolleybuses();
-    }, []);
+    }, [filters, searchText]);
+
 
     const filteredTrolleybuses = applyFilters(searchText);
 
