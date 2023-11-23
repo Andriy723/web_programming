@@ -8,15 +8,7 @@ import Loader from "../Loader/loader";
 import {fetchTrolleybusesApi} from "./api";
 
 function Catalog() {
-    const [trolleybusesItemList, setTrolleybusesItemList] = useState([
-        // { id: 1, img: <img src="/icons/big_trolleybus.png" alt="photo1" width="370" height="220" />, title: 'TRHD-533', description: 'hrrehre', price: 10.00, type: 'for_50people' },
-        // { id: 2, title: 'GYUJNE-222', description: 'hetfd', price: 8, type: 'for_70people' },
-        // { id: 3, title: '76DJHG', description: 'kinjte', price: 2, type: 'for_30people' },
-        // { id: 4, title: 'GYEBGEY', description: 'rfvghuytrdhjytfd', price: 45, type: 'for_70people' },
-        // { id: 5, title: 'GVWUU DHU', description: 'kikuytffgytrfdfghytrfrdrgtr', price: 55, type: 'for_50people' },
-        // { id: 6, title: '20-HGFff', description: 'arggr', price: 67, type: 'for_30people' },
-    ]);
-
+    const [trolleybusesItemList, setTrolleybusesItemList] = useState([]);
 
     const [loading, setLoading] = useState(true);
 
@@ -38,6 +30,7 @@ function Catalog() {
             title: titleFilter,
             type: typeFilter,
         });
+        fetchTrolleybusesApi(appliedFilters);
     };
 
     const handleCancelFilters = () => {
@@ -57,7 +50,7 @@ function Catalog() {
         setTitleFilter('all');
         setTypeFilter('all');
 
-        fetchTrolleybusesApi();
+        fetchTrolleybusesApi(appliedFilters);
     };
 
     const [priceFilter, setPriceFilter] = useState('all');
@@ -118,7 +111,6 @@ function Catalog() {
             // const searchFilterCondition = searchText.split('').every(letter =>
             //     trolleybus.title.toLowerCase().includes(letter)
             // );
-
             return priceFilterCondition && titleFilterCondition && typeFilterCondition && searchFilterCondition;
         });
     };
@@ -127,7 +119,7 @@ function Catalog() {
         const fetchTrolleybuses = async () => {
             try {
                 setLoading(true);
-                const data = await fetchTrolleybusesApi(appliedFilters);
+                const data = await fetchTrolleybusesApi(filters);
                 setTrolleybusesItemList(data);
             } finally {
                 setLoading(false);
@@ -135,7 +127,7 @@ function Catalog() {
         };
 
         fetchTrolleybuses();
-    }, [appliedFilters]);
+    }, []);
 
     const filteredTrolleybuses = applyFilters(searchText);
 
