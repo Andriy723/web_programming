@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap');
+
+h3 {
+    text-align: center;
+    font-family: Gilroy-Regular;
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.title_price_buttons a {
+    text-decoration: none;
+    color: white;
+}
+
+.empty_cart {
+    text-align: center;
+    font-size: 20px;
+    font-family: Gilroy-Regular;
+    margin-top: 100px;
+}
+
+.items_cart ul {
+    list-style-type: none;
+    margin-left: 30px;
+}
+
+.items_cart {
+    margin-top: 50px;
+}
+
+.title_price_buttons {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.title_price_buttons h3 {
+    font-size: 29px;
+    margin-left: 40px;
+}
+
+.title_price_buttons h2 {
+    font-size: 22px;
+    font-weight: 300;
+    position: absolute;
+    margin-left: 623px;
+}
+
+.price_cart {
+    font-size: 24px;
+    margin-left: 920px;
+    position: absolute;
+}
+
+.button_cart_delete {
+    margin-left: 550px;
+    border: none;
+    position: absolute;
+}
+
+.button_cart_delete button {
+    background: transparent;
+    border: none;
+}
+
+.button_cart_add {
+    margin-left: 650px;
+    border: none;
+    position: absolute;
+}
+
+.button_cart_add button {
+    background: transparent;
+    border: none;
+}
+
+.cart-item {
+    text-decoration: none;
+    display: flex;
+    gap: 10px;
+    margin-top: 40px;
+    background: rgba(0, 0, 0, 0.87);
+    width: 1370px;
+    color: white;
+    border-radius: 10px;
+    font-family: Gilroy-Regular;
+}
+
+.cart-item img {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.total_amount {
+    font-size: 22px;
+    font-family: Gilroy-Regular;
+    display: flex;
+    justify-content: right;
+    margin-right: 82px;
+}
+
+.count_price {
+    display: flex;
+    justify-content: right;
+}
+
+.total_price {
+    font-weight: 700;
+    margin-left: 50px;
+}
+
+.container {
+    width: 190px;
+    height: 80px;
+    display: flex;
+    margin-top: 30px;
+    margin-left: 670px;
+}
+
+.center {
+    width: 180px;
+    height: 60px;
+    position: absolute;
+    color: #e60d0d;
+}
+
+.btn {
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    transition: 1s ease-in-out;
+    width: 180px;
+    border: 2px solid #e60d0d;
+    color: #e60d0d;
+    font-size: 15px;
+    font-weight: 800;
+    font-family: Gilroy-Regular;
+}
+
+.btn svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: #ffffff;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+}
+
+.btn:hover {
+    transition: 1s ease-in-out;
+    background: rgba(230, 13, 13, 0.37);
+}
+
+.btn:hover svg {
+    stroke-dashoffset: -480;
+}
+
+.btn span {
+    color: #e60d0d;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: Gilroy-Regular;
+    letter-spacing: 1px;
+}

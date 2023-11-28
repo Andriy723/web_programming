@@ -1,0 +1,16 @@
+ua\lviv\iot\algo\part1\modelDTO\ProblemsDTO.class
+ua\lviv\iot\algo\part1\start\Application.class
+ua\lviv\iot\algo\part1\modelDTO\AutomobileDTO.class
+ua\lviv\iot\algo\part1\model\Automobile.class
+ua\lviv\iot\algo\part1\model\Location.class
+ua\lviv\iot\algo\part1\fileManager\ProblemPDRWriter.class
+ua\lviv\iot\algo\part1\service\AutomobileService.class
+ua\lviv\iot\algo\part1\service\ProblemPDRService.class
+ua\lviv\iot\algo\part1\fileManager\LocationWriter.class
+ua\lviv\iot\algo\part1\fileManager\AutomobileWriter.class
+ua\lviv\iot\algo\part1\controler\AutomobileController.class
+ua\lviv\iot\algo\part1\service\LocationService.class
+ua\lviv\iot\algo\part1\controler\ProblemsPDRController.class
+ua\lviv\iot\algo\part1\controler\LocationController.class
+ua\lviv\iot\algo\part1\model\ProblemPDR.class
+ua\lviv\iot\algo\part1\modelDTO\LocationDTO.class
