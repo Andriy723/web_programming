@@ -33,3 +33,13 @@
 ***
 ### Лабораторна робота №10 (Варіант 20)
 Посилання на вітку [тут](https://github.com/Andriy723/web_programming/tree/Lab10_cart_page)
+
+***
+### Лабораторна робота №11 (Варіант 20)
+Посилання на вітку [тут](https://github.com/Andriy723/web_programming/tree/Lab11_formik)
+
+***
+### Лабораторна робота №12 (Варіант 20)
+Посилання на вітку [тут](https://github.com/Andriy723/web_programming/tree/Lab12_login_singUp)
+
+
