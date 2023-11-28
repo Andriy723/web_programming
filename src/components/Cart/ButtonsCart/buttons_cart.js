@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import React from "react";
 
 function ButtonsCart() {
@@ -10,7 +10,7 @@ function ButtonsCart() {
                         <span>Back to Catalog</span>
                     </button>
                 </Link>
-                <Link to="/Cart">
+                <Link to="/Checkout">
                     <button className="continue_cart">
                         <span>Continue</span>
                     </button>

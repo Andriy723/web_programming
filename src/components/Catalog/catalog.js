@@ -6,7 +6,6 @@ import BottomCatalog from "./BottomCatalog/bottom_catalog";
 import Footer from "../Home/Footer/footer";
 import Loader from "../Loader/loader";
 import {fetchTrolleybusesApi} from "./api";
-import {eventWrapper} from "@testing-library/user-event/dist/utils";
 
 function Catalog() {
     const [trolleybusesItemList, setTrolleybusesItemList] = useState([]);
