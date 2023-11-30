@@ -40,6 +40,6 @@
 
 ***
 ### Лабораторна робота №12 (Варіант 20)
-Посилання на вітку [тут](https://github.com/Andriy723/web_programming/tree/Lab12_login_singUp)
+Посилання на вітку [тут](https://github.com/Andriy723/web_programming/tree/Lab12_login_signUp)
 
 
