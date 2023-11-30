@@ -140,7 +140,7 @@
 
 .header_catalog__nav-buttons a {
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
     text-align: center;
 }
 
@@ -148,63 +148,70 @@
     color: black;
 }
 
-.header_catalog__category, .header_catalog__category1  {
-    margin-right: 100px;
-    padding: 6px 31px;
-    border: 3px solid transparent;
-    border-radius: 30px;
+.header__nav-buttons a {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-weight: 700;
     font-family: "Gilroy-Regular";
-    font-size: 20px;
-    width: 142px;
-    height: 54px;
 }
 
-.header_catalog__nav-buttons button {
+.header_catalog__category a:hover, .header_catalog__category1 a:hover {
+    color: #e60d0d;
+}
+
+.header_catalog__category, .header_catalog__category1  {
+    margin-right: 60px;
+    padding: 6px 0;
+    border: 3px solid transparent;
+    border-radius: 30px;
+    font-size: 22px;
+    width: 112px;
+    height: 54px;
+    font-weight: 700;
+    font-family: Gilroy-Regular;
+}
+
+.header_catalog__category button {
     margin: 0 60px 0 0;
 }
 
-.header_catalog__category, .header_catalog__category1 {
-    padding: 0.5em 2em;
+.header_catalog__category1 {
     outline: none;
-    background: #ffffff;
-    border: 3px solid transparent;
-    font-family: "Gilroy-Regular";
     cursor: pointer;
     position: relative;
     z-index: 0;
-    border-radius: 10px;
+    background: none;
+    ser-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    text-align: center;
+    color: black;
+    border-radius: 1px;
+    border-bottom: 2px solid #e60d0d;
+}
+
+.header_catalog__category {
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    background: none;
     ser-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
     margin: 0 60px 0 0;
     text-align: center;
+    color: black;
+    border-radius: 1px;
+    border-bottom: 2px solid #000000;
 }
 
-.header_catalog__category a:active, .header_catalog__category a:before, .header_catalog__category a:hover,
-.header_catalog__category a:after {
-    color: #29e005;
-}
-
-.header_catalog__category1 a:active, .header_catalog__category1 a:before, .header_catalog__category1 a:hover,
-.header_catalog__category1 a:after {
-    color: #29e005;
+.header_catalog__category a:active, .header_catalog__category a:before, .header_catalog__category a:hover, .header_catalog__category a:after {
+    color: #e60d0d;
 }
 
 .header_catalog__category:before, .header_catalog__category1:before {
-    content: "";
-    background: linear-gradient(
-            55deg,
-            #10ff1b,
-            #29e005,
-            #99ff86,
-            #5aeff3,
-            #0da47c,
-            #00ff50,
-            #73e16e,
-            #33f1ad,
-            #00ff77
-    );
-    position: absolute;
     top: -2px;
     left: -2px;
     background-size: 400%;
@@ -213,22 +220,8 @@
     -webkit-filter: blur(5px);
     width: calc(100% + 4px);
     height: calc(100% + 4px);
-    animation: glowing-header__category 20s linear infinite;
-    transition: opacity 0.3s ease-in-out;
     border-radius: 10px;
     margin: 0 60px 0 0;
-}
-
-@keyframes glowing-header__category {
-    0% {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: 400% 0;
-    }
-    100% {
-        background-position: 0 0;
-    }
 }
 
 .header_catalog__category:after {
@@ -237,46 +230,37 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #000000;
     left: 0;
     top: 0;
     border-radius: 10px;
     margin: 0 60px 0 0;
+    color: black;
 }
 
-.header_catalog__category1:after {
-    z-index: -1;
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #f4f0f0;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-    margin: 0 60px 0 0;
+.header_catalog__category a:after {
+    color: black;
 }
 
 .header_catalog__category:hover, .header_catalog__category1:hover {
-    padding: 0.6em 1.8em;
     outline: none;
-    background: #ffffff;
+    background: none;
     border: 2px solid transparent;
     font-family: "Gilroy-Regular";
     cursor: pointer;
     position: relative;
     z-index: 0;
     border-radius: 30px;
-    font-size: 20px;
+    font-size: 22px;
     ser-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
     margin: 0 60px 0 0;
-    width: 142px;
+    width: 112px;
     height: 54px;
+    scale: 1.03;
     text-align: center;
-    scale: 1.05;
 }
+
 
 @keyframes going0 {
     0% {

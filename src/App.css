@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+.button_app {
+  background: none;
+  border-radius: 13px;
+  padding: 9px;
+  font-weight: 700;
+  font-family: Gilroy-Regular;
+  font-size: 16px;
+  margin-left: 1430px;
+  margin-top: 20px;
+  font-weight: 700;
+  color: #d72020;
+  border: none;
+}
+
+.button_app:hover {
+  background: none;
+  border-radius: 13px;
+  padding: 9px;
+  font-weight: 700;
+  font-family: Gilroy-Regular;
+  font-size: 16px;
+  margin-left: 1430px;
+  margin-top: 20px;
+  font-weight: 700;
+  color: #ff0000;
+  border: none;
+  scale: 1.1;
+}

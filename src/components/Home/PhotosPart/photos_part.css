@@ -1,205 +1,41 @@
-/*.photos_part {*/
-/*    margin-top: 20px;*/
-/*    font-family: "Gilroy-Regular";*/
-/*    padding-bottom: 210px;*/
-/*}*/
-
-/*.additional-content {*/
-/*    display: block;*/
-/*    margin-left: -50px;*/
-/*    margin-top: 10px;*/
-/*    font-family: "Gilroy-Regular";*/
-/*}*/
-
-/*.additional-content1 {*/
-/*    display: flex;*/
-/*    margin-top: 10px;*/
-/*    font-family: "Gilroy-Regular";*/
-/*}*/
-
-/*.additional-content2 {*/
-/*    display: flex;*/
-/*    margin-top: 10px;*/
-/*    font-family: "Gilroy-Regular";*/
-/*}*/
-
-/*.photos_part__nav_i_h_p1 img, .photos_part__nav_i_h_p2 img, .photos_part__nav_i_h_p3 img,*/
-/*.photos_part__nav_i_h_p4 img, .photos_part__nav_i_h_p5 img, .photos_part__nav_i_h_p6 img {*/
-/*    aspect-ratio: 1;*/
-/*    border-radius: 20px;*/
-/*    opacity: 1;*/
-/*    transition: .5s;*/
-/*    cursor: pointer;*/
-/*    border: 2px solid #ffffff;*/
-/*    border-radius: 20px;*/
-/*    display: flex;*/
-/*    margin-left: 40px;*/
-/*}*/
-
-/*.photos_part__nav_i_h_p1, .photos_part__nav_i_h_p2, .photos_part__nav_i_h_p3,*/
-/*.photos_part__nav_i_h_p4, .photos_part__nav_i_h_p5, .photos_part__nav_i_h_p6 {*/
-/*    margin-left: 40px;*/
-/*}*/
-
-/*.photos_part__nav_i_h_p1 img:hover, .photos_part__nav_i_h_p2 img:hover, .photos_part__nav_i_h_p3 img:hover,*/
-/*.photos_part__nav_i_h_p4 img:hover, .photos_part__nav_i_h_p5 img:hover, .photos_part__nav_i_h_p6 img:hover {*/
-/*    opacity: .8;*/
-/*}*/
-
-/*.trolleybuses_item_info p {*/
-/*    font-size: 19px;*/
-/*    width: 350px;*/
-/*    margin-left: 50px;*/
-/*    margin-top: 0;*/
-/*}*/
-
-/*.trolleybuses_item_info h2 {*/
-/*    font-size: 29px;*/
-/*    margin-left: 50px;*/
-/*    padding: 0;*/
-/*    margin-top: 5px;*/
-/*    margin-bottom: 15px;*/
-/*}*/
-
-/*.photos_part_header1, .photos_part_header2, .photos_part_header3,*/
-/*.photos_part_header4, .photos_part_header5, .photos_part_header6  {*/
-/*    font-size: 29px;*/
-/*    margin-left: 50px;*/
-/*    padding: 0;*/
-/*    margin-top: 5px;*/
-/*    margin-bottom: 15px;*/
-/*}*/
-
-/*.photos_part_paragraph_1, .photos_part_paragraph_2, .photos_part_paragraph_3,*/
-/*.photos_part_paragraph_4, .photos_part_paragraph_5, .photos_part_paragraph_6 {*/
-/*    font-size: 19px;*/
-/*    width: 350px;*/
-/*    margin-left: 50px;*/
-/*    margin-top: 0;*/
-/*}*/
-
-
-/*.trolleybuses_item img {*/
-/*    border: 2px solid #ffffff;*/
-/*    border-radius: 20px;*/
-/*    display: flex;*/
-/*    margin-left: 80px;*/
-/*}*/
-
-/*.trolleybuses_item_info p {*/
-/*    font-size: 19px;*/
-/*    width: 350px;*/
-/*    margin-left: 50px;*/
-/*}*/
-
-/*.trolleybuses_item_info h2 {*/
-/*    font-size: 29px;*/
-/*    margin-left: 50px;*/
-/*}*/
-
-/*.photos_part__nav {*/
-/*    margin-left: 80px;*/
-/*    display: flex;*/
-/*    text-align: center;*/
-/*}*/
-
-.view_more_button a {
-    text-decoration: none;
-    color: black;
-}
-
 .view_more_button {
-    margin-top: 60px;
-    margin-left: 660px;
-    padding: 0.5em 2em;
-    outline: none;
-    text-decoration: none;
-    color: #106d56;
-    width: 190px;
-    height: 50px;
-    font-size: 20px;
-    border: 3px solid transparent;
-    font-family: "Gilroy-Regular";
+    margin-left: 708px;
+    margin-top: 35px;
+    background-color: #fff;
+    background-image: none;
+    background-position: 0 90%;
+    background-repeat: repeat no-repeat;
+    background-size: 4px 3px;
+    border-radius: 15px 225px 255px 15px;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+    box-sizing: border-box;
+    color: #41403e;
     cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-    ser-select: none;
+    display: inline-block;
+    font-size: 1.1rem;
+    line-height: 23px;
+    outline: none;
+    padding: .75rem;
+    text-decoration: none;
+    transition: all 235ms ease-in-out;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-}
-
-.view_more_button:before {
-    content: "";
-    background: linear-gradient(
-            55deg,
-            #10ff1b,
-            #29e005,
-            #99ff86,
-            #5aeff3,
-            #0da47c,
-            #00ff50,
-            #73e16e,
-            #33f1ad,
-            #00ff77
-    );
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing-header__category 20s linear infinite;
-    transition: opacity 0.3s ease-in-out;
-    border-radius: 10px;
-    margin: 0 60px 0 0;
-}
-
-@keyframes glowing-header__category {
-    0% {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: 400% 0;
-    }
-    100% {
-        background-position: 0 0;
-    }
-}
-
-.view_more_button:after {
-    z-index: -1;
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.94);
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-    margin: 0 60px 0 0;
+    font-family: Gilroy-Regular;
+    font-weight: bold;
 }
 
 .view_more_button:hover {
-    outline: none;
-    background: #ffffff;
-    border: 2px solid transparent;
-    font-family: "Gilroy-Regular";
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 30px;
-    font-size: 20px;
-    ser-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    width: 190px;
-    height: 50px;
-    margin-top: 60px;
-    margin-left: 660px;
-    scale: 1.0;
-    padding: 0.5em 2em;
+    box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+    transform: translate3d(0, 2px, 0);
+}
+
+.view_more_button-55:focus {
+    box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }

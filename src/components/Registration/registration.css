@@ -1,0 +1,52 @@
+.registration_container {
+    margin-top: 80px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 550px;
+    background: rgba(30, 28, 28, 0.91);
+    font-family: Gilroy-Regular;
+    margin-left: 500px;
+    margin-bottom: 80px;
+    display: block;
+    color: #FFFFFF;
+    padding-bottom: 25px;
+}
+
+.registration_header {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.username_registration, .email_registration,
+.password_registration, .password_confirmation_registration {
+    margin-left: 0;
+}
+
+.username_input_registration, .email_input_registration,
+.password_input_registration,
+.password_confirmation_input_registration {
+    border-radius: 10px;
+    border: 2px solid white;
+    outline: none;
+    padding: 5px;
+    background: rgba(241, 234, 234, 0.68);
+    width: 250px;
+}
+
+.singup_button_registration {
+    border-radius: 4px;
+    border: 1px solid white;
+    padding: 7px;
+    background: #2c2f6b;
+    color: white;
+    font-family: Gilroy-Regular;
+    font-weight: 700;
+    font-size: 16px;
+    width: 130px;
+}
+
+.login_button_registration a {
+    color: #00a6ff;
+    text-decoration: none;
+}

@@ -128,7 +128,7 @@ h3 {
 .btn {
     height: 60px;
     cursor: pointer;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.69);
     outline: none;
     transition: 1s ease-in-out;
     width: 180px;

@@ -21,7 +21,6 @@ label {
     padding: 8px;
     margin-top: 4px;
     box-sizing: border-box;
-    border: 2px solid #3377ef;
     border-radius: 5px;
     padding-bottom: 20px;
     margin-left: 640px;
@@ -31,16 +30,8 @@ label {
             rgba(0, 0, 0, 0.07) 0px 4px 4px,
             rgba(0, 0, 0, 0.07) 0px 8px 8px,
             rgba(0, 0, 0, 0.07) 0px 16px 16px,
-            rgb(92, 174, 255) 0px 0px 2px 1px;
+            rgba(0, 0, 0, 0.86) 0px 0px 5px 1px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.address_form textarea:focus {
-    border-color: #0445e6;
-    outline: none;
-    box-shadow:
-            rgb(4, 69, 230) 0px 0px 5px 1px,
-            rgba(0, 0, 0, 0.15) 0px 0px 0px 1px;
 }
 
 .error {
@@ -67,21 +58,21 @@ label {
             rgba(0, 0, 0, 0.07) 0px 4px 4px,
             rgba(0, 0, 0, 0.07) 0px 8px 8px,
             rgba(0, 0, 0, 0.07) 0px 16px 16px,
-            rgb(0, 126, 255) 0px 0px 5px 1px;
+            rgba(0, 0, 0, 0.86) 0px 0px 5px 1px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.forms input:focus {
-    border-color: #0445e6;
+.forms input:focus, .address_form textarea:focus {
+    border-color: rgb(193, 184, 184);
     outline: none;
     box-shadow:
-            rgb(4, 69, 230) 0px 0px 5px 1px,
-            rgba(0, 0, 0, 0.15) 0px 0px 0px 1px;
+            rgb(255, 255, 255) 0px 0px 5px 1px,
+            rgb(255, 255, 255) 0px 0px 0px 1px;
 }
 
 
 ::placeholder {
-    color: rgba(100, 149, 237, 0.64);
+    color: rgba(131, 137, 151, 0.64);
 }
 
 .form_buttons {
@@ -101,7 +92,7 @@ label {
     margin-left: 840px;
     border-radius: 5px;
     border: 2px solid #29e005;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.69);
     font-size: 17px;
     font-weight: 600;
     font-family: Gilroy-Regular;
@@ -143,7 +134,7 @@ label {
     position: relative;
     transition: all .35s;
     border-radius: 5px;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.69);
     font-size: 17px;
     font-weight: 600;
     font-family: Gilroy-Regular;

@@ -14,6 +14,7 @@
     opacity: 1;
     transition: .5s;
     cursor: pointer;
+    border: 2px solid white;
 }
 
 .main_part__nav_img img:hover {
