@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './components/Home/Header/header.css';
 import './components/Cart/HeaderCart/header_cart.css';
 import './components/Cart/Form/checkout_form.css';
@@ -31,12 +31,9 @@ import Checkout from './components/Cart/Form/checkout_form';
 import Success from './components/Cart/Success/success';
 import Login from "./components/Login/login";
 import Registration from "./components/Registration/registration";
+import ProtectedRoute from "./components/ProtectedRoute/protected_route";
 
 const trolleybusesItemList = [];
-
-const ProtectedRoute = ({ element, isAuthenticated }) => {
-    return isAuthenticated ? element : <Navigate to="/login" />;
-};
 
 const App = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -45,32 +42,35 @@ const App = () => {
     useEffect(() => {
         const storedEmail = localStorage.getItem('email');
         const lastLoginTime = localStorage.getItem('lastLoginTime');
+        const manualLogout = localStorage.getItem('manualLogout');
 
-        if (storedEmail && lastLoginTime) {
+        if (storedEmail && lastLoginTime && !manualLogout) {
             const elapsedTime = Date.now() - parseInt(lastLoginTime);
 
-            const timeWindow = 60 * 1000;
+            const timeWindow = 12 * 60 * 1000;
 
             if (elapsedTime < timeWindow) {
                 setIsAuthenticated(true);
             } else {
-                handleLogout();
+                setIsAuthenticated(false);
             }
         }
+
+        localStorage.removeItem('manualLogout');
     }, []);
 
     const handleLogout = () => {
-        const storedEmail = localStorage.getItem('email');
-
+        console.log('Logging out...');
         const userConfirmed = window.confirm('Are you sure you want to sign out?');
 
         if (userConfirmed) {
-            if (storedEmail) {
-                localStorage.setItem('lastLoggedOutEmail', storedEmail);
-            }
-
-            localStorage.removeItem('lastLoginTime');
             setIsAuthenticated(false);
+            localStorage.setItem('lastLoggedOutEmail', localStorage.getItem('email'));
+            localStorage.removeItem('lastLoginTime');
+            localStorage.removeItem('manualLogout');
+            window.location.href = '/login';
+        } else {
+            console.log('You cancelled logout');
         }
     };
 
@@ -78,7 +78,11 @@ const App = () => {
         localStorage.setItem('email', email);
         localStorage.setItem('lastLoginTime', Date.now().toString());
         setIsAuthenticated(true);
-        alert('You have been successfully log in!');
+
+        if (localStorage.getItem('manualLogin') === 'true') {
+            alert('You have been successfully logged in!');
+            localStorage.removeItem('manualLogin');
+        }
     };
 
     return (
@@ -98,28 +102,29 @@ const App = () => {
                             element={<Registration setIsAuthenticated={setIsAuthenticated} onRegister={handleLogin} />}
                         />
                         <Route
-                            path="/*"
-                            element={<ProtectedRoute element={<Home />} isAuthenticated={isAuthenticated} storedEmail={localStorage.getItem('email')} lastLoginTime={localStorage.getItem('lastLoginTime')} />}
+                            path="/"
+                            element={<ProtectedRoute element={<Home />} isAuthenticated={isAuthenticated} redirectPath="/login"/>}
                         />
+
                         <Route
                             path="/catalog"
-                            element={<ProtectedRoute element={<Catalog />} isAuthenticated={isAuthenticated} storedEmail={localStorage.getItem('email')} lastLoginTime={localStorage.getItem('lastLoginTime')} />}
+                            element={<ProtectedRoute element={<Catalog />} isAuthenticated={isAuthenticated} redirectPath="/login"/>}
                         />
                         <Route
                             path="/cart"
-                            element={<ProtectedRoute element={<Cart />} isAuthenticated={isAuthenticated} storedEmail={localStorage.getItem('email')} lastLoginTime={localStorage.getItem('lastLoginTime')} />}
+                            element={<ProtectedRoute element={<Cart />} isAuthenticated={isAuthenticated} redirectPath="/login"/>}
                         />
                         <Route
                             path="/checkout"
-                            element={<ProtectedRoute element={<Checkout />} isAuthenticated={isAuthenticated} storedEmail={localStorage.getItem('email')} lastLoginTime={localStorage.getItem('lastLoginTime')} />}
+                            element={<ProtectedRoute element={<Checkout />} isAuthenticated={isAuthenticated} redirectPath="/login"/>}
                         />
                         <Route
                             path="/success"
-                            element={<ProtectedRoute element={<Success />} isAuthenticated={isAuthenticated} storedEmail={localStorage.getItem('email')} lastLoginTime={localStorage.getItem('lastLoginTime')} />}
+                            element={<ProtectedRoute element={<Success />} isAuthenticated={isAuthenticated} redirectPath="/login"/>}
                         />
                         <Route
                             path="/items/:id"
-                            element={<ProtectedRoute element={<ItemPage trolleybusesItemList={trolleybusesItemList} />} isAuthenticated={isAuthenticated} storedEmail={localStorage.getItem('email')} lastLoginTime={localStorage.getItem('lastLoginTime')} />}
+                            element={<ProtectedRoute element={<ItemPage trolleybusesItemList={trolleybusesItemList} />} isAuthenticated={isAuthenticated} redirectPath="/login"/>}
                         />
                     </Routes>
                 </div>

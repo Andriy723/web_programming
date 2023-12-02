@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Bottom from "../Home/Bottom/bottom";
 import Footer from "../Home/Footer/footer";
@@ -8,19 +8,6 @@ const Login = ({ setIsAuthenticated, setRegisteredEmail, onLogin }) => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
-
-    useEffect(() => {
-        const lastLoggedOutEmail = localStorage.getItem('lastLoggedOutEmail');
-        const lastLoginTime = localStorage.getItem('lastLoginTime');
-
-        if (lastLoggedOutEmail && lastLoginTime) {
-            setIsAuthenticated(true);
-            onLogin(lastLoggedOutEmail);
-            navigate('/');
-        } else if (lastLoggedOutEmail) {
-            setEmail(lastLoggedOutEmail);
-        }
-    }, []);
 
     const handleLogin = () => {
         const storedEmail = localStorage.getItem('email');
@@ -32,7 +19,9 @@ const Login = ({ setIsAuthenticated, setRegisteredEmail, onLogin }) => {
 
             setIsAuthenticated(true);
             onLogin(email);
+
             navigate('/');
+
         } else {
             setError('Invalid email or password. Please try again.');
         }

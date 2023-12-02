@@ -5,6 +5,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import HeaderCart from "../HeaderCart/header_cart";
 import Footer from "../../Home/Footer/footer";
 import Bottom from "../../Home/Bottom/bottom";
+import {clearCart} from "../Redux/actions";
+import {useDispatch} from "react-redux";
 
 const CheckoutSchema = Yup.object().shape({
     firstName: Yup.string()
@@ -31,7 +33,7 @@ const CheckoutSchema = Yup.object().shape({
 const Checkout = () => {
     const navigate = useNavigate();
     const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
-
+    const dispatch = useDispatch();
 
     useEffect(() => {
         let timerId;
@@ -69,6 +71,7 @@ const Checkout = () => {
                     } else {
                         setIsErrorModalOpen(false);
                         navigate('/Success');
+                        dispatch(clearCart())
                     }
                     setSubmitting(false);
                 }}

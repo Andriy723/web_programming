@@ -112,7 +112,7 @@ function Cart() {
                     </div>
                 </div>
             )}
-            <ButtonsCart />
+            <ButtonsCart hasItemsInCart={cartItems.length > 0} />
             <Bottom />
             <Footer />
         </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Bottom from "../Home/Bottom/bottom";
-import Footer from "../Home/Footer/footer";
-import { Link, useNavigate } from "react-router-dom";
+import Bottom from '../Home/Bottom/bottom';
+import Footer from '../Home/Footer/footer';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Registration = ({ setIsAuthenticated, onRegister }) => {
     const [username, setUsername] = useState('');
@@ -11,8 +11,19 @@ const Registration = ({ setIsAuthenticated, onRegister }) => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
+    const isGoogleEmail = (inputEmail) => {
+        const googleEmailPattern = /@gmail\.com$/;
+        return googleEmailPattern.test(inputEmail);
+    };
+
     const handleRegistration = () => {
-        if (username.trim() !== '' && email.trim() !== '' && password.trim() !== '' && password === confirmPassword) {
+        if (
+            username.trim() !== '' &&
+            email.trim().length >= 13 &&
+            password.trim() !== '' &&
+            password === confirmPassword &&
+            isGoogleEmail(email)
+        ) {
             localStorage.setItem('email', email);
             localStorage.setItem('password', password);
             setIsAuthenticated(true);
@@ -29,8 +40,8 @@ const Registration = ({ setIsAuthenticated, onRegister }) => {
                 <h2 className="registration_header">Sign up</h2>
                 <div>
                     <label className="username_registration">Username:</label>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
                     <input
                         className="username_input_registration"
                         type="text"
@@ -38,11 +49,11 @@ const Registration = ({ setIsAuthenticated, onRegister }) => {
                         onChange={(e) => setUsername(e.target.value)}
                     />
                 </div>
-                <br/>
+                <br />
                 <div>
                     <label className="email_registration">Email:</label>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
                     <input
                         className="email_input_registration"
                         type="text"
@@ -50,11 +61,11 @@ const Registration = ({ setIsAuthenticated, onRegister }) => {
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
-                <br/>
+                <br />
                 <div>
                     <label className="password_registration">Password:</label>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
                     <input
                         className="password_input_registration"
                         type="password"
@@ -62,11 +73,11 @@ const Registration = ({ setIsAuthenticated, onRegister }) => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
-                <br/>
+                <br />
                 <div>
                     <label className="password_confirmation_registration">Confirm Password:</label>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
                     <input
                         className="password_confirmation_input_registration"
                         type="password"
@@ -74,17 +85,17 @@ const Registration = ({ setIsAuthenticated, onRegister }) => {
                         onChange={(e) => setConfirmPassword(e.target.value)}
                     />
                 </div>
-                <br/>
+                <br />
                 {error && <p style={{ color: 'red' }}>{error}</p>}
-                <br/>
-                <button onClick={handleRegistration} className="singup_button_registration">Sign up</button>
+                <br />
+                <button onClick={handleRegistration} className="singup_button_registration">
+                    Sign up
+                </button>
                 <p>
                     Have an account?{'  '}
                     <span className="login_button_registration">
-                        <Link to="/login">
-                            Login
-                        </Link>
-                    </span>
+            <Link to="/login">Login</Link>
+          </span>
                 </p>
             </div>
             <Bottom />
