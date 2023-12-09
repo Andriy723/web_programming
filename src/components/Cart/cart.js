@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeFromCart, clearCart, addToCart } from './Redux/actions';
+import {removeFromCart, clearCart, addToCart, removeAllItemsOfObject} from './Redux/actions';
 import HeaderCart from './HeaderCart/header_cart';
 import ButtonsCart from './ButtonsCart/buttons_cart';
 import Bottom from '../Home/Bottom/bottom';
@@ -36,6 +36,18 @@ function Cart() {
         dispatch(removeFromCart(itemId));
     };
 
+    const handleRemoveFromCartObject = (itemId) => {
+        const itemToRemove = cartItems.find((item) => item.id === itemId);
+
+        if (itemToRemove) {
+            const shouldRemove = window.confirm(`Are you sure you want to remove all items of ${itemToRemove.title} from the cart?`);
+
+            if (shouldRemove) {
+                dispatch(removeAllItemsOfObject(itemId));
+            }
+        }
+    };
+
     const handleAddToCart = (item) => {
         dispatch(addToCart(item));
 
@@ -56,7 +68,7 @@ function Cart() {
     return (
         <div>
             <HeaderCart />
-            <h3>Shopping Cart</h3>
+            <h3 className={"header_cart_main"}>Shopping Cart</h3>
             {cartItems.length === 0 ? (
                 <p className="empty_cart">
                     Your cart is empty...<br />
@@ -90,6 +102,11 @@ function Cart() {
                                         <div className="price_cart">
                                             <p>Price: ${item.price * item.quantity}</p>
                                         </div>
+                                    </div>
+                                    <div className="delete">
+                                        <span className="delete_thing" onClick={() => handleRemoveFromCartObject(item.id)}>
+                                            &#10006;
+                                        </span>
                                     </div>
                                 </div>
                             </li>

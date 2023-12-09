@@ -55,6 +55,13 @@ const cartReducer = (state = initialState, action) => {
             };
         default:
             return state;
+
+        case 'REMOVE_ALL_ITEMS_OF_OBJECT':
+            const updatedCart = state.cart.filter((item) => item.id !== action.payload);
+            return {
+                ...state,
+                cart: updatedCart,
+            };
     }
 };
 

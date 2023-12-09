@@ -13,6 +13,7 @@ function ItemPage() {
     const { id } = useParams();
     const itemId = parseInt(id);
     const [selectedTrolleybus, setSelectedTrolleybus] = useState(null);
+    const [quantity, setQuantity] = useState(1);
 
     useEffect(() => {
         const fetchTrolleybusById = async () => {
@@ -28,7 +29,10 @@ function ItemPage() {
     }
 
     const handleAddToCart = () => {
-        dispatch(addToCart(selectedTrolleybus));
+        for (let i = 0; i < quantity; i++) {
+            dispatch(addToCart(selectedTrolleybus));
+        }
+        alert("Trolleybuses were added to cart successfully")
     };
 
     return (
@@ -69,14 +73,26 @@ function ItemPage() {
                     <h2>Price: ${selectedTrolleybus.price}</h2>
                     <h2>Type: {selectedTrolleybus.type}</h2>
                 </div>
-                <div className="back_and_cart">
-                    <Link to="/Catalog"><button className="back_catalog_button">Back to Catalog</button></Link>
-                    <Link to="/Cart">
-                        <button className="to_cart_button" onClick={handleAddToCart}>
-                            Add to cart
-                        </button>
-                    </Link>
+                <div/>
+                <div className="quantity_">
+                    <p className={'header_quantity'}>Choose the number of trolleybuses:</p>
+                    <input
+                        className={'input_quantity_add'}
+                        type="number"
+                        value={quantity}
+                        onChange={(e) => setQuantity(parseInt(e.target.value))}
+                        min="1"
+                    />
                 </div>
+                    <div className="back_and_cart">
+                        <Link to="/Catalog"><button className="back_catalog_button">Back to Catalog</button></Link>
+                        <Link to="/Cart">
+
+                            <button className="to_cart_button" onClick={handleAddToCart}>
+                                Add to cart
+                            </button>
+                        </Link>
+                    </div>
             </div>
             <Bottom/>
             <Footer/>

@@ -5,7 +5,6 @@ import MainPart from "./MainPart/main_part";
 import PhotosPart from "./PhotosPart/photos_part";
 import Bottom from "./Bottom/bottom";
 import Footer from "./Footer/footer";
-import {useNavigate} from "react-router-dom";
 
 function Home() {
     const initialTrolleybusesItemList = [

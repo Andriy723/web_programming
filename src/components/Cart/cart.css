@@ -1,10 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap');
 
-h3 {
+.header_cart_main {
     text-align: center;
     font-family: Gilroy-Regular;
     font-size: 36px;
     font-weight: 800;
+    margin-left: 573px;
+}
+
+h3 {
+    text-align: start;
+    font-family: Gilroy-Regular;
+    font-size: 36px;
+    font-weight: 800;
+    width: 300px;
 }
 
 .title_price_buttons a {
@@ -21,7 +30,7 @@ h3 {
 
 .items_cart ul {
     list-style-type: none;
-    margin-left: 30px;
+    margin-left: 10px;
 }
 
 .items_cart {
@@ -81,7 +90,7 @@ h3 {
     gap: 10px;
     margin-top: 40px;
     background: rgba(0, 0, 0, 0.87);
-    width: 1370px;
+    width: 1390px;
     color: white;
     border-radius: 10px;
     font-family: Gilroy-Regular;
@@ -165,4 +174,24 @@ h3 {
     font-weight: 600;
     font-family: Gilroy-Regular;
     letter-spacing: 1px;
+}
+
+.title_price_buttons h2 {
+    text-align: start;
+    position: absolute;
+    margin-right: 30px;
+}
+
+.delete_thing {
+    margin-left: 710px;
+    width: 40px;
+    height: 40px;
+    margin-top: 74px;
+    position: absolute;
+}
+
+.delete {
+    width: 20px;
+    height: 20px;
+    align-items: end;
 }

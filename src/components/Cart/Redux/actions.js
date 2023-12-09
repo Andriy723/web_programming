@@ -21,3 +21,9 @@ export const removeFromCart = (itemId) => ({
 export const clearCart = () => ({
     type: 'CLEAR_CART',
 });
+
+export const removeAllItemsOfObject = (itemId) => ({
+    type: 'REMOVE_ALL_ITEMS_OF_OBJECT',
+    payload: itemId,
+});
+
