@@ -1,0 +1,40 @@
+.main_part {
+    margin-top: 80px;
+    font-family: "Gilroy-Regular";
+}
+
+.main_part__nav {
+    margin-left: 80px;
+    display: flex;
+}
+
+.main_part__nav_img img {
+    aspect-ratio: 1;
+    border-radius: 20px;
+    opacity: 1;
+    transition: .5s;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.main_part__nav_img img:hover {
+    opacity: .8;
+}
+
+.main_part__nav_img {
+    margin-top: 26px;
+}
+
+.main_part_h_p {
+    align-items: center;
+    margin-left: 80px;
+}
+
+.main_part_header {
+    font-size: 39px;
+}
+
+.main_part_paragraph {
+    width: 590px;
+    font-size: 21px;
+}

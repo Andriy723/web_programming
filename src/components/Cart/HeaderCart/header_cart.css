@@ -1,0 +1,44 @@
+.header {
+    margin-bottom: 50px;
+    border-bottom: 1px solid #000000;
+    font-family: Gilroy-Regular;
+}
+
+.a {
+    text-decoration: none;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__nav-logo {
+    align-items: center;
+    margin-left: 100px;
+}
+
+.header__nav-logo img {
+    background: none;
+    animation: 4s 1s 1 going;
+}
+
+@keyframes going {
+    0% {
+        margin-left: 290px;
+        filter: drop-shadow(23px 5px 6px rgba(55, 48, 48, 0.49));
+    }
+    30% {
+        margin-left: -290px;
+        filter: drop-shadow(56px 5px 6px rgba(55, 48, 48, 0.38));
+    }
+    80%{
+        margin-left: 70px;
+        filter: drop-shadow(3px 5px 6px rgba(55, 48, 48, 0.29));
+    }
+    100%{
+        margin-left: 0;
+        filter: drop-shadow(1px 5px 6px rgba(55, 48, 48, 0.08));
+    }
+}

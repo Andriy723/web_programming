@@ -1,0 +1,138 @@
+.filter_catalog {
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+    align-items: center;
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.header_catalog__nav1, .header_catalog__nav2, .header_catalog__nav3 {
+    padding-left: 60px;
+}
+
+.header_catalog__nav1 select, .header_catalog__nav2 select, .header_catalog__nav3 select {
+    border: 2px solid rgba(0, 0, 0, 0.49);
+    border-radius: 9px;
+    width: 145px;
+    height: 35px;
+    box-shadow:
+    rgba(0, 0, 0, 0.07) 0px 1px 1px,
+    rgba(0, 0, 0, 0.07) 0px 2px 2px,
+    rgba(0, 0, 0, 0.07) 0px 4px 4px,
+    rgba(0, 0, 0, 0.07) 0px 8px 8px,
+    rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+.button_apply {
+    border-radius: 15px;
+    margin-left: 550px;
+    background: white;
+    border: 2px solid rgba(37, 128, 54, 0.7);
+    align-items: center;
+    box-sizing: border-box;
+    color: rgba(37, 128, 54, 0.7);
+    cursor: pointer;
+    display: inline-flex;
+    fill: rgba(37, 128, 54, 0.07);
+    font-family: Gilroy-Regular;
+    font-size: 16px;
+    font-weight: 600;
+    height: 48px;
+    justify-content: center;
+    letter-spacing: -.8px;
+    line-height: 24px;
+    min-width: 127px;
+    outline: 0;
+    padding: 0 17px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    box-shadow:
+            rgba(0, 0, 0, 0.07) 0px 1px 1px,
+            rgba(0, 0, 0, 0.07) 0px 2px 2px,
+            rgba(0, 0, 0, 0.07) 0px 4px 4px,
+            rgba(0, 0, 0, 0.07) 0px 8px 8px,
+            rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+.button_apply:focus {
+    color: rgba(37, 128, 54, 0.7);
+}
+
+.button_apply:hover {
+    border-color: #42c124;
+    color: #42C124FF;
+    fill: #42C124FF;
+    box-shadow: rgb(30, 77, 32) 0px 4px 9px,
+    rgb(41, 224, 5) 0px 2px 4px;
+}
+
+
+.button_apply:active {
+    border-color: #42C124FF;
+    color: #42C124FF;
+    fill: #42C124FF;
+    box-shadow: 0 0 3px #44a22d,
+    0 0 8px #44A22DFF,
+    0 0 13px #44A22DFF;
+}
+
+.button_cancel {
+    border-radius: 15px;
+    margin-left: 10px;
+    background: white;
+    border: 2px solid rgba(199, 24, 24, 0.7);
+    align-items: center;
+    box-sizing: border-box;
+    color: rgba(199, 24, 24, 0.7);
+    cursor: pointer;
+    display: inline-flex;
+    fill: rgba(199, 24, 24, 0.7);
+    font-family: Gilroy-Regular;
+    font-size: 16px;
+    font-weight: 600;
+    height: 48px;
+    justify-content: center;
+    letter-spacing: -.8px;
+    line-height: 24px;
+    min-width: 127px;
+    outline: 0;
+    padding: 0 17px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    box-shadow:
+            rgba(0, 0, 0, 0.07) 0px 1px 1px,
+            rgba(0, 0, 0, 0.07) 0px 2px 2px,
+            rgba(0, 0, 0, 0.07) 0px 4px 4px,
+            rgba(0, 0, 0, 0.07) 0px 8px 8px,
+            rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+.button_cancel:focus {
+    color: #e60d0d;
+}
+
+.button_cancel:hover {
+    border-color: #ff0000;
+    color: #ff0000;
+    fill: #ff0000;
+    box-shadow: rgb(130, 32, 32) 0px 4px 9px,
+    rgb(230, 13, 13) 0px 2px 4px;
+}
+
+.button_cancel:active {
+    border-color: #ff0000;
+    color: #ff0000;
+    fill: #ff0000;
+    box-shadow: 0 0 3px #FF0000FF,
+    0 0 8px #FF0000FF,
+    0 0 13px #FF0000FF;
+}

@@ -1,0 +1,185 @@
+.checkout_header {
+    margin-left: 694px;
+    font-size: 38px;
+    font-family: Gilroy-Regular;
+}
+
+.forms {
+    padding-top: 23px;
+    padding-bottom: 50px;
+}
+
+label {
+    font-weight: bold;
+    font-family: Gilroy-Regular;
+    margin-left: 640px;
+}
+
+.address_form textarea {
+    font-family: Gilroy-Regular;
+    width: 270px;
+    padding: 8px;
+    margin-top: 4px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    margin-left: 640px;
+    box-shadow:
+            rgba(0, 0, 0, 0.07) 0px 1px 1px,
+            rgba(0, 0, 0, 0.07) 0px 2px 2px,
+            rgba(0, 0, 0, 0.07) 0px 4px 4px,
+            rgba(0, 0, 0, 0.07) 0px 8px 8px,
+            rgba(0, 0, 0, 0.07) 0px 16px 16px,
+            rgba(0, 0, 0, 0.86) 0px 0px 5px 1px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.error {
+    font-family: Gilroy-Regular;
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-left: 37px;
+    margin-top: 10px;
+}
+
+.forms input {
+    font-family: Gilroy-Regular;
+    width: 270px;
+    padding: 8px;
+    margin-top: 4px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    margin-left: 640px;
+    box-shadow:
+            rgba(0, 0, 0, 0.07) 0px 1px 1px,
+            rgba(0, 0, 0, 0.07) 0px 2px 2px,
+            rgba(0, 0, 0, 0.07) 0px 4px 4px,
+            rgba(0, 0, 0, 0.07) 0px 8px 8px,
+            rgba(0, 0, 0, 0.07) 0px 16px 16px,
+            rgba(0, 0, 0, 0.86) 0px 0px 5px 1px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.forms input:focus, .address_form textarea:focus {
+    border-color: rgb(193, 184, 184);
+    outline: none;
+    box-shadow:
+            rgb(255, 255, 255) 0px 0px 5px 1px,
+            rgb(255, 255, 255) 0px 0px 0px 1px;
+}
+
+
+::placeholder {
+    color: rgba(131, 137, 151, 0.64);
+}
+
+.form_buttons {
+    margin-top: 40px;
+    display: flex;
+}
+
+.continue_cart_form {
+    width: 190px;
+    height: 53px;
+    text-decoration: none;
+    color: #29e005;
+    letter-spacing: 1px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+    margin-left: 840px;
+    border-radius: 5px;
+    border: 2px solid #29e005;
+    background: rgba(255, 255, 255, 0.69);
+    font-size: 17px;
+    font-weight: 600;
+    font-family: Gilroy-Regular;
+}
+
+.continue_cart_form span {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    align-items: center;
+    font-family: Gilroy-Regular;
+}
+
+.continue_cart_form:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #29e005;
+    transition: all .35s;
+}
+
+.continue_cart_form:hover {
+    color: #fff;
+}
+
+.continue_cart_form:hover:after {
+    width: 100%;
+}
+
+.go_back_form {
+    width: 190px;
+    height: 53px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.69);
+    font-size: 17px;
+    font-weight: 600;
+    font-family: Gilroy-Regular;
+    border: 2px solid #e60d0d;
+    color: #e60d0d;
+    margin-left: 135px;
+}
+
+.go_back_form span {
+    position: relative;
+    z-index: 2;
+    font-family: Gilroy-Regular;
+}
+
+.go_back_form:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background: #e60d0d;
+    transition: all .35s;
+}
+
+.go_back_form:hover {
+    color: #fff;
+}
+
+.go_back_form:hover:after {
+    width: 100%;
+}
+
+.error-message {
+    background-color: #ffcccc;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 30%;
+    margin-left: 530px;
+    font-family: Gilroy-Regular;
+    font-weight: 600;
+}

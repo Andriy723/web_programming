@@ -1,0 +1,31 @@
+.header_success {
+    font-family: Gilroy-Regular;
+    font-size: 31px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.paragraph_success {
+    font-family: Gilroy-Regular;
+    font-size: 21px;
+    text-align: center;
+}
+
+.back_catalog_success {
+    border-radius: 20px;
+    width: 200px;
+    padding: 12px;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    margin-left: 658px;
+    border: 2px solid #272424;
+    background: #272222;
+    font-size: 18px;
+    font-family: Gilroy-Regular;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.checkmark-container {
+    align-items: center;
+}
